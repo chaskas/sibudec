@@ -19,23 +19,81 @@ class Ebook
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", unique=true, nullable=false)
+     * @ORM\Column(name="title", type="string", unique=true, nullable=false)
      */
-    private $name;
-
+    protected $title;
 
     /**
-     * Get id
+     * @var string
      *
-     * @return integer 
+     * @ORM\Column(name="author", type="string", unique=true, nullable=false)
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $author;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="year", type="integer", nullable=false)
+     */
+    protected $year;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="ebooks")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", unique=false, nullable=false)
+     */
+    protected $url;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Source", inversedBy="ebooks")
+     * @ORM\JoinColumn(name="source_id", referencedColumnName="id")
+     */
+    protected $source;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AccessType", inversedBy="ebooks")
+     * @ORM\JoinColumn(name="access_type_id", referencedColumnName="id")
+     */
+    protected $accessType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="subscriptionType", type="string", unique=false, nullable=false)
+     */
+    protected $subscriptionType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bibliography", type="string", unique=false, nullable=true)
+     */
+    protected $bibliography;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Editorial", inversedBy="ebooks")
+     * @ORM\JoinColumn(name="editorial_id", referencedColumnName="id")
+     */
+    protected $editorial;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", unique=false, nullable=false)
+     */
+    protected $status;
+
+
+    
 }
