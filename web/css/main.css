@@ -75,22 +75,22 @@ a.secondary-button {
         color: rgb(75, 113, 151);
     }
 
-    .email-label-personal,
-    .email-label-work,
-    .email-label-travel {
+    .label-ebooks,
+    .label-revistas,
+    .label-basesdedatos {
         width: 15px;
         height: 15px;
         display: inline-block;
         margin-right: 0.5em;
         border-radius: 3px;
     }
-    .email-label-personal {
+    .label-ebooks {
         background: #ffc94c;
     }
-    .email-label-work {
+    .label-revistas {
         background: #41ccb4;
     }
-    .email-label-travel {
+    .label-basesdedatos {
         background: #40c365;
     }
 

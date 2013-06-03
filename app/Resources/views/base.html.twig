@@ -16,10 +16,29 @@
 
             <div class="pure-u" id="nav">
                 <a href="#nav" class="nav-menu-button">Menú</a>
+                <a href="{{ path('admin_ebook') }}">
+                    <img src="{{ asset('img/logo.png') }}" />
+                </a>
+                <br/><br/>
                 <div class="nav-inner">
                     <div class="pure-menu pure-menu-open">
                         <ul>
-                            <li><a href="{{ path('admin_ebook') }}">Ebooks</a></li>
+                            <li>
+                                <a href="{{ path('admin_ebook') }}">
+                                    <span class="label-ebooks"></span>Ebooks
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('admin_ebook') }}">
+                                    <span class="label-revistas"></span>Revistas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('admin_ebook') }}">
+                                    <span class="label-basesdedatos"></span>Bases de datos
+                                </a>
+                            </li>
+                            <li class="pure-menu-heading">Configuración</li>
                             <li><a href="{{ path('admin_category') }}">Áreas temáticas</a></li>
                             <li><a href="{{ path('admin_accesstype') }}">Tipos de acceso</a></li>
                             <li><a href="{{ path('admin_editorial') }}">Editoriales</a></li>
