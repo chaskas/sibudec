@@ -208,3 +208,8 @@ a.secondary-button {
         height: 40px;
     }
 }
+
+.success {
+    color: white;
+    background: rgb(76, 201, 71); /* this is a green */
+}
