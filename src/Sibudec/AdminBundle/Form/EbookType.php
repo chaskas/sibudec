@@ -11,17 +11,17 @@ class EbookType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('author')
-            ->add('year')
-            ->add('url')
-            ->add('subscriptionType')
-            ->add('bibliography')
-            ->add('status')
-            ->add('category')
-            ->add('source')
-            ->add('accessType')
-            ->add('editorial')
+            ->add('title',              null, array('label'=>'Título'))
+            ->add('author',             null, array('label'=>'Autor'))
+            ->add('year',               null, array('label'=>'Año'))
+            ->add('url',                null, array('label'=>'Url'))
+            ->add('subscriptionType',   null, array('label'=>'Tipo de suscripción'))
+            ->add('bibliography',       null, array('label'=>'Bibliografía'))
+            ->add('status',             null, array('label'=>'Estado'))
+            ->add('category',           null, array('label'=>'Área temática'))
+            ->add('source',             null, array('label'=>'Fuente'))
+            ->add('accessType',         null, array('label'=>'Tipo de acceso'))
+            ->add('editorial',          null, array('label'=>'Editorial'))
         ;
     }
 

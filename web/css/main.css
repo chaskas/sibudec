@@ -213,3 +213,7 @@ a.secondary-button {
     color: white;
     background: rgb(76, 201, 71); /* this is a green */
 }
+.error {
+    color: white;
+    background: rgb(202, 60, 60); /* this is a maroon */
+}

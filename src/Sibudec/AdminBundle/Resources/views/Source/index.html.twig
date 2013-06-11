@@ -26,13 +26,13 @@
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
-                            <a href="{{ path('admin_source_show', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                            <a href="{{ path('admin_source_edit', { 'id': entity.id }) }}">{{ entity.name }}</a>
                         </td>
                         <td>
                             <a href="{{ path('admin_source_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
                             </a>
-                            <a href="{{ path('admin_source_show', { 'id': entity.id }) }}">
+                            <a href="{{ path('admin_source_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
                                 <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
                             </a>
                         </td>
