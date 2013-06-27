@@ -28,7 +28,7 @@
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
-                            <a href="{{ path('admin_ebook_show', { 'id': entity.id }) }}">{{ entity.title }}</a>
+                            <a href="{{ path('admin_ebook_edit', { 'id': entity.id }) }}">{{ entity.title }}</a>
                         </td>
                         <td>{{ entity.author }}</td>
                         <td>{{ entity.year }}</td>
@@ -36,7 +36,7 @@
                             <a href="{{ path('admin_ebook_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
                             </a>
-                            <a href="{{ path('admin_ebook_show', { 'id': entity.id }) }}">
+                            <a href="{{ path('admin_ebook_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
                             </a>
                         </td>

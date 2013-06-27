@@ -6,7 +6,7 @@
             <div class="pure-u-1-2">
                 <h1 class="content-title">Ebooks</h1>
                 <p class="content-subtitle">
-                    Complete el formulario para agregar nuevo Ebook.
+                    Edite el formulario para actualizar el Ebook.
                 </p>
             </div>
             <div class="pure-u-1-2 content-controls">
@@ -92,7 +92,7 @@
             <form action="{{ path('admin_ebook_delete', { 'id': entity.id }) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />
                 {{ form_widget(delete_form) }}
-                <button type="submit" class="pure-button error">Borrar</button>
+                <button type="submit" class="pure-button error" onclick="if(!confirm('¿Estás seguro?')) { return false; }">Borrar</button>
             </form>
         </div>
     </div>

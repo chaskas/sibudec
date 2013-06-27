@@ -2,4 +2,3 @@ sibudec_admin:
     resource: "@SibudecAdminBundle/Controller/"
     type:     annotation
     prefix:   /
-

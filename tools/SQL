@@ -1,0 +1,60 @@
+#mysqldump -u biblio -p --opt --quote-names --skip-set-charset --default-character-set=latin1 biblio > biblio.sql
+#mysql -u root -p --default-character-set=utf8 biblio < biblio.sql
+
+#Limpia las tablas
+
+delete from AccessType;
+delete from Category;
+delete from Editorial;
+delete from Source;
+delete from Ebook;
+
+#Empieza la division
+
+#Editorial
+insert into Editorial (name) select distinct trim(char(160) from editorial) from biblio.ebooks;
+
+#Áreas Temáticas
+insert into Category (name) select distinct trim(char(160) from area) from biblio.ebooks;
+
+#Tipo de acceso
+insert into AccessType (name) select distinct trim(char(160) from acceso) from biblio.ebooks;
+
+#Fuentes
+insert into Source (name) select distinct trim(char(160) from fuente) from biblio.ebooks;
+
+
+#Agrega todos los libros
+insert into Ebook
+(
+    category_id,
+    source_id,
+    access_type_id,
+    editorial_id,
+    title,
+    author,
+    year,
+    url,
+    subscriptionType,
+    bibliography,
+    status
+)
+select 
+    C.id as category_id,
+    S.id as source_id,
+    A.id as access_type_id,
+    E.id as editorial_id,
+    trim(char(160) from B.titulo) as title,
+    trim(char(160) from B.autor) as author,
+    trim(char(160) from B.ano) as year,
+    trim(char(160) from B.url) as url,
+    trim(char(160) from B.tsuscripcion) as subscriptionType,
+    trim(char(160) from B.bibliografia) as bibliography,
+    trim(char(160) from B.estado) as status
+from biblio.ebooks as B, sibudec.Editorial as E, sibudec.Category as C, sibudec.AccessType as A, sibudec.Source as S
+
+where 
+    trim(char(160) from B.area) = C.name and
+    trim(char(160) from B.fuente) = S.name and
+    trim(char(160) from B.acceso) = A.name and
+    trim(char(160) from B.editorial) = E.name
