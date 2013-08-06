@@ -77,7 +77,8 @@ a.secondary-button {
 
     .label-ebooks,
     .label-revistas,
-    .label-basesdedatos {
+    .label-basesdedatos,
+    .label-adquisiciones {
         width: 15px;
         height: 15px;
         display: inline-block;
@@ -93,6 +94,10 @@ a.secondary-button {
     .label-basesdedatos {
         background: #40c365;
     }
+    .label-adquisiciones {
+        background: #c04642;
+    }
+    
 
 /* Email Item Styles */
 .email-item {
