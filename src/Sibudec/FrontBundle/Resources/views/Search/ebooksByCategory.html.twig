@@ -1,0 +1,32 @@
+{% extends '::front.html.twig' %}
+
+{% block body -%}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h1 class="content-title">Ebooks</h1>
+                <p class="content-subtitle">
+                    Seleccione un ebooks para ir al recurso.
+                </p>
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
+                        <td>
+                            <a href="{{ entity.url }}" target="_blank">{{ entity.title }}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
