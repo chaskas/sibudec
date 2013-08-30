@@ -4,7 +4,7 @@
     <div class="content pure-g">
         <div class="content-header pure-g">
             <div class="pure-u-1-2">
-                <h1 class="content-title">Tipos de acceso</h1>
+                <h2 class="content-title">Tipos de acceso</h2>
                 <p class="content-subtitle">
                     Listado de tipos de acceso al <span>{{ "now"|date("d/M/Y") }}</span>
                 </p>
@@ -26,13 +26,13 @@
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
-                            <a href="{{ path('admin_accesstype_show', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                            <a href="{{ path('admin_accesstype_edit', { 'id': entity.id }) }}">{{ entity.name }}</a>
                         </td>
                         <td>
                             <a href="{{ path('admin_accesstype_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
                             </a>
-                            <a href="{{ path('admin_accesstype_show', { 'id': entity.id }) }}">
+                            <a href="{{ path('admin_accesstype_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
                                 <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
                             </a>
                         </td>

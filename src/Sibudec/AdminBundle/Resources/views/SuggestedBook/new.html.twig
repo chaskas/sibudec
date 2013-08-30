@@ -1,0 +1,85 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h2 class="content-title">Libros sugeridos</h2>
+                <p class="content-subtitle">
+                    Complete el formulario para sugerir un nuevo libro.
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_suggestedbook') }}">Volver</a>
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <form action="{{ path('admin_suggestedbook_create') }}" method="post" {{ form_enctype(form) }} class="pure-form pure-form-stacked">
+
+                {{ form_errors(form) }}
+
+                <div>
+                    {{ form_label(form.title) }}
+                    {{ form_errors(form.title) }}
+                    {{ form_widget(form.title) }}
+                </div>
+                <div>
+                    {{ form_label(form.author) }}
+                    {{ form_errors(form.author) }}
+                    {{ form_widget(form.author) }}
+                </div>
+                <div>
+                    {{ form_label(form.year) }}
+                    {{ form_errors(form.year) }}
+                    {{ form_widget(form.year) }}
+                </div>
+                <div>
+                    {{ form_label(form.additionalInformation) }}
+                    {{ form_errors(form.additionalInformation) }}
+                    {{ form_widget(form.additionalInformation) }}
+                </div>
+                <div>
+                    {{ form_label(form.format) }}
+                    {{ form_errors(form.format) }}
+                    {{ form_widget(form.format) }}
+                </div>
+
+                <div>
+                    {{ form_label(form.reason) }}
+                    {{ form_errors(form.reason) }}
+                    {{ form_widget(form.reason) }}
+                </div>
+
+                <div>
+                    {{ form_label(form.petitionerFullName) }}
+                    {{ form_errors(form.petitionerFullName) }}
+                    {{ form_widget(form.petitionerFullName) }}
+                </div>
+
+                <div>
+                    {{ form_label(form.petitionerEmail) }}
+                    {{ form_errors(form.petitionerEmail) }}
+                    {{ form_widget(form.petitionerEmail) }}
+                </div>
+
+                <div>
+                    {{ form_label(form.petitionerStatus) }}
+                    {{ form_errors(form.petitionerStatus) }}
+                    {{ form_widget(form.petitionerStatus) }}
+                </div>
+
+                <div>
+                    {{ form_label(form.petitionerArea) }}
+                    {{ form_errors(form.petitionerArea) }}
+                    {{ form_widget(form.petitionerArea) }}
+                </div>
+
+                {{ form_rest(form) }}
+
+                <p>
+                    <button type="submit" class="pure-button success">Guardar</button>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -39,10 +39,10 @@ class SearchController extends Controller
     /**
      * Lists all Category entities.
      *
-     * @Route("/categories/magazines", name="search_categories_magazines")
+     * @Route("/categories/journals", name="search_categories_journals")
      * @Template()
      */
-    public function categoriesMagazinesAction()
+    public function categoriesJournalsAction()
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -90,10 +90,10 @@ class SearchController extends Controller
     /**
      * Lists all Category entities.
      *
-     * @Route("/category/{id}/magazines", name="search_magazines_by_category")
+     * @Route("/category/{id}/journals", name="search_journals_by_category")
      * @Template()
      */
-    public function magazinesByCategoryAction()
+    public function journalsByCategoryAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -110,7 +110,7 @@ class SearchController extends Controller
      * @Route("/category/{id}/databases", name="search_databases_by_category")
      * @Template()
      */
-    public function databasesByCategoryAction()
+    public function databasesByCategoryAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 

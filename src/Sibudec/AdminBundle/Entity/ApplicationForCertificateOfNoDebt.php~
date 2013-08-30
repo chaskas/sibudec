@@ -1,0 +1,68 @@
+<?php
+
+namespace Sibudec\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ApplicationForCertificateOfNoDebt
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class ApplicationForCertificateOfNoDebt
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=255)
+     */
+    private $lastName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="RUT", type="string", length=255)
+     */
+    private $rut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="degree", type="string", length=255)
+     */
+    private $degree;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reason", type="string", length=255)
+     */
+    private $reason;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="division", type="string", length=255)
+     */
+    private $division;
+
+
+    
+}

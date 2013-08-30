@@ -53,7 +53,7 @@ class AccessTypeController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_accesstype_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_accesstype_edit', array('id' => $entity->getId())));
         }
 
         return array(
@@ -77,31 +77,6 @@ class AccessTypeController extends Controller
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
-    }
-
-    /**
-     * Finds and displays a AccessType entity.
-     *
-     * @Route("/{id}", name="admin_accesstype_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('SibudecAdminBundle:AccessType')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find AccessType entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 

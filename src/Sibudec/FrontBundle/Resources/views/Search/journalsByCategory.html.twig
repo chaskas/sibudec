@@ -4,9 +4,9 @@
     <div class="content pure-g">
         <div class="content-header pure-g">
             <div class="pure-u-1-2">
-                <h1 class="content-title">Áreas temáticas</h1>
+                <h2 class="content-title">Revistas</h2>
                 <p class="content-subtitle">
-                    Seleccione un área para ver todas los Revistas relacionadas.
+                    Seleccione una revista para ir al recurso.
                 </p>
             </div>
         </div>
@@ -21,7 +21,7 @@
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
-                            <a href="{{ path('search_magazines_by_category', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                            <a href="{{ entity.url }}" target="_blank">{{ entity.title }}</a>
                         </td>
                     </tr>
                     {% endfor %}

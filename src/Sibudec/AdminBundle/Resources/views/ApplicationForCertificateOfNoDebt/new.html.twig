@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h2 class="content-title">Solicitudes de Certificado de No Deuda</h2>
+                <p class="content-subtitle">
+                    Complete el formulario para ingresar solicitud.
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_afcond') }}">Volver</a>
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <form action="{{ path('admin_afcond_create') }}" method="post" {{ form_enctype(form) }} class="pure-form pure-form-stacked">
+
+                {{ form_errors(form) }}
+
+                <div>
+                    {{ form_label(form.firstName) }}
+                    {{ form_errors(form.firstName) }}
+                    {{ form_widget(form.firstName) }}
+                </div>
+                <div>
+                    {{ form_label(form.lastName) }}
+                    {{ form_errors(form.lastName) }}
+                    {{ form_widget(form.lastName) }}
+                </div>
+                <div>
+                    {{ form_label(form.rUT) }}
+                    {{ form_errors(form.rUT) }}
+                    {{ form_widget(form.rUT) }}
+                </div>
+                <div>
+                    {{ form_label(form.degree) }}
+                    {{ form_errors(form.degree) }}
+                    {{ form_widget(form.degree) }}
+                </div>
+                <div>
+                    {{ form_label(form.reason) }}
+                    {{ form_errors(form.reason) }}
+                    {{ form_widget(form.reason) }}
+                </div>
+                <div>
+                    {{ form_label(form.division) }}
+                    {{ form_errors(form.division) }}
+                    {{ form_widget(form.division) }}
+                </div>
+
+                {{ form_rest(form) }}
+
+                <p>
+                    <button type="submit" class="pure-button success">Guardar</button>
+                </p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

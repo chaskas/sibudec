@@ -157,4 +157,27 @@ class Acquisition
     {
         return $this->bibliography;
     }
+
+    /**
+     * Set school
+     *
+     * @param \Sibudec\AdminBundle\Entity\School $school
+     * @return Acquisition
+     */
+    public function setSchool(\Sibudec\AdminBundle\Entity\School $school = null)
+    {
+        $this->school = $school;
+
+        return $this;
+    }
+
+    /**
+     * Get school
+     *
+     * @return \Sibudec\AdminBundle\Entity\School 
+     */
+    public function getSchool()
+    {
+        return $this->school;
+    }
 }

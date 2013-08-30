@@ -7,20 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sibudec\AdminBundle\Entity\Ebook;
-use Sibudec\AdminBundle\Form\EbookType;
+use Sibudec\AdminBundle\Entity\SuggestedBook;
+use Sibudec\AdminBundle\Form\SuggestedBookType;
 
 /**
- * Ebook controller.
+ * SuggestedBook controller.
  *
- * @Route("/admin/ebook")
+ * @Route("/admin/suggestedbook")
  */
-class EbookController extends Controller
+class SuggestedBookController extends Controller
 {
     /**
-     * Lists all Ebook entities.
+     * Lists all SuggestedBook entities.
      *
-     * @Route("/", name="admin_ebook")
+     * @Route("/", name="admin_suggestedbook")
      * @Method("GET")
      * @Template()
      */
@@ -28,7 +28,7 @@ class EbookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findAll();
+        $entities = $em->getRepository('SibudecAdminBundle:SuggestedBook')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,16 +36,16 @@ class EbookController extends Controller
     }
 
     /**
-     * Creates a new Ebook entity.
+     * Creates a new SuggestedBook entity.
      *
-     * @Route("/", name="admin_ebook_create")
+     * @Route("/", name="admin_suggestedbook_create")
      * @Method("POST")
-     * @Template("SibudecAdminBundle:Ebook:new.html.twig")
+     * @Template("SibudecAdminBundle:SuggestedBook:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity  = new Ebook();
-        $form = $this->createForm(new EbookType(), $entity);
+        $entity  = new SuggestedBook();
+        $form = $this->createForm(new SuggestedBookType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -53,7 +53,7 @@ class EbookController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_ebook_edit', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_suggestedbook_edit', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class EbookController extends Controller
     }
 
     /**
-     * Displays a form to create a new Ebook entity.
+     * Displays a form to create a new SuggestedBook entity.
      *
-     * @Route("/new", name="admin_ebook_new")
+     * @Route("/new", name="admin_suggestedbook_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Ebook();
-        $form   = $this->createForm(new EbookType(), $entity);
+        $entity = new SuggestedBook();
+        $form   = $this->createForm(new SuggestedBookType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -81,9 +81,9 @@ class EbookController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Ebook entity.
+     * Displays a form to edit an existing SuggestedBook entity.
      *
-     * @Route("/{id}/edit", name="admin_ebook_edit")
+     * @Route("/{id}/edit", name="admin_suggestedbook_edit")
      * @Method("GET")
      * @Template()
      */
@@ -91,13 +91,13 @@ class EbookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+        $entity = $em->getRepository('SibudecAdminBundle:SuggestedBook')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ebook entity.');
+            throw $this->createNotFoundException('Unable to find SuggestedBook entity.');
         }
 
-        $editForm = $this->createForm(new EbookType(), $entity);
+        $editForm = $this->createForm(new SuggestedBookType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -108,31 +108,31 @@ class EbookController extends Controller
     }
 
     /**
-     * Edits an existing Ebook entity.
+     * Edits an existing SuggestedBook entity.
      *
-     * @Route("/{id}", name="admin_ebook_update")
+     * @Route("/{id}", name="admin_suggestedbook_update")
      * @Method("PUT")
-     * @Template("SibudecAdminBundle:Ebook:edit.html.twig")
+     * @Template("SibudecAdminBundle:SuggestedBook:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+        $entity = $em->getRepository('SibudecAdminBundle:SuggestedBook')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ebook entity.');
+            throw $this->createNotFoundException('Unable to find SuggestedBook entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new EbookType(), $entity);
+        $editForm = $this->createForm(new SuggestedBookType(), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_ebook_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_suggestedbook_edit', array('id' => $id)));
         }
 
         return array(
@@ -143,9 +143,9 @@ class EbookController extends Controller
     }
 
     /**
-     * Deletes a Ebook entity.
+     * Deletes a SuggestedBook entity.
      *
-     * @Route("/{id}", name="admin_ebook_delete")
+     * @Route("/{id}", name="admin_suggestedbook_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -155,21 +155,21 @@ class EbookController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+            $entity = $em->getRepository('SibudecAdminBundle:SuggestedBook')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Ebook entity.');
+                throw $this->createNotFoundException('Unable to find SuggestedBook entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_ebook'));
+        return $this->redirect($this->generateUrl('admin_suggestedbook'));
     }
 
     /**
-     * Creates a form to delete a Ebook entity by id.
+     * Creates a form to delete a SuggestedBook entity by id.
      *
      * @param mixed $id The entity id
      *

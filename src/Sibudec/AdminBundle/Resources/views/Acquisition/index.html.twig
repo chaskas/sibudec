@@ -1,47 +1,49 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Acquisition list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Year</th>
-                <th>Bibliography</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('admin_acquisition_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.title }}</td>
-                <td>{{ entity.author }}</td>
-                <td>{{ entity.year }}</td>
-                <td>{{ entity.bibliography }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('admin_acquisition_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('admin_acquisition_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('admin_acquisition_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h2 class="content-title">Adquisiciones</h2>
+                <p class="content-subtitle">
+                    Listado de Adquisisiones al <span>{{ "now"|date("d/M/Y") }}</span>
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_acquisition_new') }}">Nueva</a>
+                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Año</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
+                        <td>
+                            <a href="{{ path('admin_acquisition_edit', { 'id': entity.id }) }}">{{ entity.title }}</a>
+                        </td>
+                        <td>{{ entity.author }}</td>
+                        <td>{{ entity.year }}</td>
+                        <td>
+                            <a href="{{ path('admin_acquisition_edit', { 'id': entity.id }) }}">
+                                <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
+                            </a>
+                            <a href="{{ path('admin_acquisition_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
+                                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

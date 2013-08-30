@@ -4,13 +4,13 @@
     <div class="content pure-g">
         <div class="content-header pure-g">
             <div class="pure-u-1-2">
-                <h2 class="content-title">Editoriales</h2>
+                <h2 class="content-title">Libros sugeridos</h2>
                 <p class="content-subtitle">
-                    Listado de editoriales al <span>{{ "now"|date("d/M/Y") }}</span>
+                    Listado de libros sugeridos al <span>{{ "now"|date("d/M/Y") }}</span>
                 </p>
             </div>
             <div class="pure-u-1-2 content-controls">
-                <a class="pure-button secondary-button" href="{{ path('admin_editorial_new') }}">Nuevo</a>
+                <a class="pure-button secondary-button" href="{{ path('admin_suggestedbook_new') }}">Nuevo</a>
                 <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
             </div>
         </div>
@@ -18,7 +18,9 @@
             <table class="pure-table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Año</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -26,13 +28,19 @@
                     {% for entity in entities %}
                     <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
                         <td>
-                            <a href="{{ path('admin_editorial_edit', { 'id': entity.id }) }}">{{ entity.name }}</a>
+                            <a href="{{ path('admin_suggestedbook_edit', { 'id': entity.id }) }}">{{ entity.title }}</a>
                         </td>
                         <td>
-                            <a href="{{ path('admin_editorial_edit', { 'id': entity.id }) }}">
+                            {{ entity.author }}
+                        </td>
+                        <td>
+                            {{ entity.year }}
+                        </td>
+                        <td>
+                            <a href="{{ path('admin_suggestedbook_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
                             </a>
-                            <a href="{{ path('admin_editorial_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
+                            <a href="{{ path('admin_suggestedbook_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
                                 <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
                             </a>
                         </td>
@@ -41,5 +49,5 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div>    
 {% endblock %}

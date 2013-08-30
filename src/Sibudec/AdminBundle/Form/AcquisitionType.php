@@ -11,11 +11,11 @@ class AcquisitionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('author')
-            ->add('year')
-            ->add('bibliography')
-            ->add('school')
+            ->add('title'       ,null, array('label'=>'Título'))
+            ->add('author'      ,null, array('label'=>'Autor'))
+            ->add('year'        ,null, array('label'=>'Año'))
+            ->add('bibliography',null, array('label'=>'Bibliografía'))
+            ->add('school'      ,null, array('label'=>'Facultad'))
         ;
     }
 

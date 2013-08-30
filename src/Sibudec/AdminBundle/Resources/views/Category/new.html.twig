@@ -1,25 +1,33 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-
     <div class="content pure-g">
         <div class="content-header pure-g">
             <div class="pure-u-1-2">
-                <h1 class="content-title">Nueva área temática</h1>
+                <h2 class="content-title">Áreas temáticas</h2>
                 <p class="content-subtitle">
-                    
+                    Complete el formulario para agregar nueva área temática.
                 </p>
             </div>
             <div class="pure-u-1-2 content-controls">
                 <a class="pure-button secondary-button" href="{{ path('admin_category') }}">Volver</a>
-                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
             </div>
         </div>
         <div class="content-body pure-u-1">
-            <form action="{{ path('admin_category_create') }}" method="post" {{ form_enctype(form) }}>
-                {{ form_widget(form) }}
+            <form action="{{ path('admin_category_create') }}" method="post" {{ form_enctype(form) }} class="pure-form pure-form-stacked">
+
+                {{ form_errors(form) }}
+
+                <div>
+                    {{ form_label(form.name) }}
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name) }}
+                </div>
+
+                {{ form_rest(form) }}
+
                 <p>
-                    <button type="submit">Create</button>
+                    <button type="submit" class="pure-button success">Guardar</button>
                 </p>
             </form>
         </div>

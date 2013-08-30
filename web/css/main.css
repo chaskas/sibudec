@@ -9,7 +9,7 @@ a {
 
 /* LAYOUT CSS */
 #layout {
-    padding-left:200px; /* "left col (nav + list)" width */
+    padding-left:300px; /* "left col (nav + list)" width */
     position: relative;
 }
 
@@ -18,8 +18,8 @@ a {
     top: 0;
     bottom: 0;
     overflow: auto;
-    margin-left:-200px; /* "left col (nav + list)" width */
-    width:200px;
+    margin-left:-300px; /* "left col (nav + list)" width */
+    width:300px;
     background: rgb(37, 42, 58);
     text-align: center;
     padding: 2em 0;
@@ -78,7 +78,9 @@ a.secondary-button {
     .label-ebooks,
     .label-revistas,
     .label-basesdedatos,
-    .label-adquisiciones {
+    .label-adquisiciones,
+    .label-libros_sugeridos,
+    .label-no_deuda {
         width: 15px;
         height: 15px;
         display: inline-block;
@@ -86,7 +88,7 @@ a.secondary-button {
         border-radius: 3px;
     }
     .label-ebooks {
-        background: #ffc94c;
+        background: #c4c449;
     }
     .label-revistas {
         background: #41ccb4;
@@ -95,7 +97,13 @@ a.secondary-button {
         background: #40c365;
     }
     .label-adquisiciones {
-        background: #c04642;
+        background: #bf7644;
+    }
+    .label-libros_sugeridos {
+        background: #b84158;
+    }
+    .label-no_deuda {
+        background: #b4dfe2;
     }
     
 

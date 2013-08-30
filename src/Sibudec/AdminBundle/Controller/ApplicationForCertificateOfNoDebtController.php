@@ -7,20 +7,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sibudec\AdminBundle\Entity\Ebook;
-use Sibudec\AdminBundle\Form\EbookType;
+use Sibudec\AdminBundle\Entity\ApplicationForCertificateOfNoDebt;
+use Sibudec\AdminBundle\Form\ApplicationForCertificateOfNoDebtType;
 
 /**
- * Ebook controller.
+ * ApplicationForCertificateOfNoDebt controller.
  *
- * @Route("/admin/ebook")
+ * @Route("/admin/afcond")
  */
-class EbookController extends Controller
+class ApplicationForCertificateOfNoDebtController extends Controller
 {
     /**
-     * Lists all Ebook entities.
+     * Lists all ApplicationForCertificateOfNoDebt entities.
      *
-     * @Route("/", name="admin_ebook")
+     * @Route("/", name="admin_afcond")
      * @Method("GET")
      * @Template()
      */
@@ -28,7 +28,7 @@ class EbookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findAll();
+        $entities = $em->getRepository('SibudecAdminBundle:ApplicationForCertificateOfNoDebt')->findAll();
 
         return array(
             'entities' => $entities,
@@ -36,16 +36,16 @@ class EbookController extends Controller
     }
 
     /**
-     * Creates a new Ebook entity.
+     * Creates a new ApplicationForCertificateOfNoDebt entity.
      *
-     * @Route("/", name="admin_ebook_create")
+     * @Route("/", name="admin_afcond_create")
      * @Method("POST")
-     * @Template("SibudecAdminBundle:Ebook:new.html.twig")
+     * @Template("SibudecAdminBundle:ApplicationForCertificateOfNoDebt:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity  = new Ebook();
-        $form = $this->createForm(new EbookType(), $entity);
+        $entity  = new ApplicationForCertificateOfNoDebt();
+        $form = $this->createForm(new ApplicationForCertificateOfNoDebtType(), $entity);
         $form->bind($request);
 
         if ($form->isValid()) {
@@ -53,7 +53,7 @@ class EbookController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_ebook_edit', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_afcond_edit', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class EbookController extends Controller
     }
 
     /**
-     * Displays a form to create a new Ebook entity.
+     * Displays a form to create a new ApplicationForCertificateOfNoDebt entity.
      *
-     * @Route("/new", name="admin_ebook_new")
+     * @Route("/new", name="admin_afcond_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Ebook();
-        $form   = $this->createForm(new EbookType(), $entity);
+        $entity = new ApplicationForCertificateOfNoDebt();
+        $form   = $this->createForm(new ApplicationForCertificateOfNoDebtType(), $entity);
 
         return array(
             'entity' => $entity,
@@ -80,10 +80,11 @@ class EbookController extends Controller
         );
     }
 
+
     /**
-     * Displays a form to edit an existing Ebook entity.
+     * Displays a form to edit an existing ApplicationForCertificateOfNoDebt entity.
      *
-     * @Route("/{id}/edit", name="admin_ebook_edit")
+     * @Route("/{id}/edit", name="admin_afcond_edit")
      * @Method("GET")
      * @Template()
      */
@@ -91,13 +92,13 @@ class EbookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+        $entity = $em->getRepository('SibudecAdminBundle:ApplicationForCertificateOfNoDebt')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ebook entity.');
+            throw $this->createNotFoundException('Unable to find ApplicationForCertificateOfNoDebt entity.');
         }
 
-        $editForm = $this->createForm(new EbookType(), $entity);
+        $editForm = $this->createForm(new ApplicationForCertificateOfNoDebtType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
@@ -108,31 +109,31 @@ class EbookController extends Controller
     }
 
     /**
-     * Edits an existing Ebook entity.
+     * Edits an existing ApplicationForCertificateOfNoDebt entity.
      *
-     * @Route("/{id}", name="admin_ebook_update")
+     * @Route("/{id}", name="admin_afcond_update")
      * @Method("PUT")
-     * @Template("SibudecAdminBundle:Ebook:edit.html.twig")
+     * @Template("SibudecAdminBundle:ApplicationForCertificateOfNoDebt:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+        $entity = $em->getRepository('SibudecAdminBundle:ApplicationForCertificateOfNoDebt')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Ebook entity.');
+            throw $this->createNotFoundException('Unable to find ApplicationForCertificateOfNoDebt entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createForm(new EbookType(), $entity);
+        $editForm = $this->createForm(new ApplicationForCertificateOfNoDebtType(), $entity);
         $editForm->bind($request);
 
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_ebook_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_afcond_edit', array('id' => $id)));
         }
 
         return array(
@@ -143,9 +144,9 @@ class EbookController extends Controller
     }
 
     /**
-     * Deletes a Ebook entity.
+     * Deletes a ApplicationForCertificateOfNoDebt entity.
      *
-     * @Route("/{id}", name="admin_ebook_delete")
+     * @Route("/{id}", name="admin_afcond_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -155,21 +156,21 @@ class EbookController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('SibudecAdminBundle:Ebook')->find($id);
+            $entity = $em->getRepository('SibudecAdminBundle:ApplicationForCertificateOfNoDebt')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Ebook entity.');
+                throw $this->createNotFoundException('Unable to find ApplicationForCertificateOfNoDebt entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_ebook'));
+        return $this->redirect($this->generateUrl('admin_afcond'));
     }
 
     /**
-     * Creates a form to delete a Ebook entity by id.
+     * Creates a form to delete a ApplicationForCertificateOfNoDebt entity by id.
      *
      * @param mixed $id The entity id
      *

@@ -5,17 +5,17 @@
     <div class="content pure-g">
         <div class="content-header pure-g">
             <div class="pure-u-1-2">
-                <h2 class="content-title">Áreas temáticas</h2>
+                <h2 class="content-title">Solicitudes de Certificado de No Deuda</h2>
                 <p class="content-subtitle">
-                    Edite el formulario para actualizar el área.
+                    Edite el formulario para actualizar la solicitud.
                 </p>
             </div>
             <div class="pure-u-1-2 content-controls">
-                <a class="pure-button secondary-button" href="{{ path('admin_category') }}">Volver</a>
+                <a class="pure-button secondary-button" href="{{ path('admin_afcond') }}">Volver</a>
             </div>
         </div>
         <div class="content-body pure-u-1">
-            <form action="{{ path('admin_category_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="pure-form pure-form-stacked">
+            <form action="{{ path('admin_afcond_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }} class="pure-form pure-form-stacked">
 
                 <input type="hidden" name="_method" value="PUT" />
 
@@ -25,7 +25,7 @@
                     <button type="submit" class="pure-button success">Guardar</button>
                 </p>
             </form>
-            <form action="{{ path('admin_category_delete', { 'id': entity.id }) }}" method="post">
+            <form action="{{ path('admin_afcond_delete', { 'id': entity.id }) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />
                 {{ form_widget(delete_form) }}
                 <button type="submit" class="pure-button error" onclick="if(!confirm('¿Estás seguro?')) { return false; }">Borrar</button>

@@ -53,7 +53,7 @@ class SourceController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_source_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_source_edit', array('id' => $entity->getId())));
         }
 
         return array(
