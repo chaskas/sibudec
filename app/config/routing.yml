@@ -7,3 +7,7 @@ sibudec_admin:
     resource: "@SibudecAdminBundle/Controller/"
     type:     annotation
     prefix:   /
+
+default:
+    pattern:  /admin
+    defaults: { _controller: SibudecAdminBundle:Ebook:index }

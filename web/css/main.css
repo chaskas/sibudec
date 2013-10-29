@@ -80,6 +80,7 @@ a.secondary-button {
     .label-basesdedatos,
     .label-adquisiciones,
     .label-libros_sugeridos,
+    .label-articulos,
     .label-no_deuda {
         width: 15px;
         height: 15px;
@@ -104,6 +105,9 @@ a.secondary-button {
     }
     .label-no_deuda {
         background: #b4dfe2;
+    }
+    .label-articulos {
+        background: #b4df94;
     }
     
 

@@ -7,7 +7,7 @@
             <div class="pure-u-1-2">
                 <h2 class="content-title">Facultades</h2>
                 <p class="content-subtitle">
-                    Edite el formulario para actualizar la Facultad.
+                    Edite el formulario para actualizar la facultad.
                 </p>
             </div>
             <div class="pure-u-1-2 content-controls">
@@ -28,7 +28,7 @@
             <form action="{{ path('admin_school_delete', { 'id': entity.id }) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE" />
                 {{ form_widget(delete_form) }}
-                <button type="submit" class="pure-button error">Borrar</button>
+                <button type="submit" class="pure-button error" onclick="if(!confirm('¿Estás seguro?')) { return false; }">Borrar</button>
             </form>
         </div>
     </div>

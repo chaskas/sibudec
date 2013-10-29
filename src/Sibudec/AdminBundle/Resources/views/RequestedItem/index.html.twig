@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="content pure-g">
+        <div class="content-header pure-g">
+            <div class="pure-u-1-2">
+                <h2 class="content-title">Artículos Solicitados</h2>
+                <p class="content-subtitle">
+                    Listado de Artículos Solicitados al <span>{{ "now"|date("d/M/Y") }}</span>
+                </p>
+            </div>
+            <div class="pure-u-1-2 content-controls">
+                <a class="pure-button secondary-button" href="{{ path('admin_requesteditem_new') }}">Nueva</a>
+                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
+            </div>
+        </div>
+        <div class="content-body pure-u-1">
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Revista</th>
+                        <th>Título</th>
+                        <th>Autor</th>
+                        <th>Año</th>
+                        <th>Volumen</th>
+                        <th>Número</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
+                        <td>{{ entity.journalTitle }}</td>
+                        <td>
+                            <a href="{{ path('admin_requesteditem_edit', { 'id': entity.id }) }}">{{ entity.title }}</a>
+                        </td>
+                        <td>{{ entity.author }}</td>
+                        <td>{{ entity.year }}</td>
+                        <td>{{ entity.volume }}</td>
+                        <td>{{ entity.number }}</td>
+                        <td>
+                            <a href="{{ path('admin_requesteditem_edit', { 'id': entity.id }) }}">
+                                <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
+                            </a>
+                            <a href="{{ path('admin_requesteditem_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
+                                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
