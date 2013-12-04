@@ -1,0 +1,125 @@
+{% extends '::front.html.twig' %}
+
+{% block body -%}
+<div id="main">
+  {{ include ('SibudecFrontBundle:Search:menu.html.twig') }}
+  <section id="page" class="ariel">
+    <article class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+
+      <p>
+        Los usuarios de la Universidad de Concepción pueden solicitar artículos de revistas que no se encuentren en nuestras bibliotecas, pero sí en otras instituciones a nivel nacional e internacional.
+        <br>Para efectuar su solicitud complete el siguiente formulario:</p>
+      <br>
+      <form action="{{ path('application_for_item_create') }}" method="post" {{ form_enctype(form) }} role="form">
+        <div class="panel panel-sibudec">
+          <div class="panel-heading">
+            <h3 class="panel-title">Solicitud de Artículo</h3>
+          </div>
+          <div class="panel-body">
+            {{ form_errors(form) }}
+            <div class="row">
+              <div class="form-group col-md-6">
+                {{ form_label(form.journalTitle) }}
+                {{ form_errors(form.journalTitle) }}
+                {{ form_widget(form.journalTitle,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+
+              <div class="form-group col-md-6">
+                {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+            </div>
+
+            <div class="form-group">
+              {{ form_label(form.author) }}
+              {{ form_errors(form.author) }}
+              {{ form_widget(form.author,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-4">
+                {{ form_label(form.volume) }}
+                {{ form_errors(form.volume) }}
+                {{ form_widget(form.volume,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+              <div class="form-group col-md-4">
+                {{ form_label(form.number) }}
+                {{ form_errors(form.number) }}
+                {{ form_widget(form.number,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+              <div class="form-group col-md-4">
+                {{ form_label(form.year) }}
+                {{ form_errors(form.year) }}
+                {{ form_widget(form.year,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                {{ form_label(form.initialPage) }}
+                {{ form_errors(form.initialPage) }}
+                {{ form_widget(form.initialPage,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+              <div class="form-group col-md-6">
+                {{ form_label(form.finalPage) }}
+                {{ form_errors(form.finalPage) }}
+                {{ form_widget(form.finalPage,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+            </div>
+
+            <div class="form-group">
+              {{ form_label(form.requesterName) }}
+              {{ form_errors(form.requesterName) }}
+              {{ form_widget(form.requesterName,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-6">
+                {{ form_label(form.requesterSchool) }}
+                {{ form_errors(form.requesterSchool) }}
+                {{ form_widget(form.requesterSchool,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+              <div class="form-group col-md-6">
+                {{ form_label(form.requesterHQ) }}
+                {{ form_errors(form.requesterHQ) }}
+                {{ form_widget(form.requesterHQ,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                {{ form_label(form.requesterEmail) }}
+                {{ form_errors(form.requesterEmail) }}
+                {{ form_widget(form.requesterEmail,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+              <div class="form-group col-md-6">
+                {{ form_label(form.requesterPhone) }}
+                {{ form_errors(form.requesterPhone) }}
+                {{ form_widget(form.requesterPhone,{ 'attr': {'class': 'form-control'} }) }}
+              </div>
+            </div>
+            <div class="form-group">
+              {{ form_label(form.comment) }}
+              {{ form_errors(form.comment) }}
+              {{ form_widget(form.comment,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+            {{ form_rest(form) }}
+          </div>
+          <div class="panel-footer">
+            <button class="btn btn-success pull-right" type="submit">Enviar</button>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </form>
+
+      <center>
+        Para mayor información contáctese con:
+        <br>
+        Servicio Bibliográfico - Biblioteca Central (4° piso).
+        <br>(56 – 41) 220 4558 o bien al correo bibhem@udec.cl
+      </center>
+
+    </article>
+  </section>
+
+</div>
+{% endblock %}

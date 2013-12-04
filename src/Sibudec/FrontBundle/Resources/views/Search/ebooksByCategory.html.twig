@@ -1,32 +1,52 @@
 {% extends '::front.html.twig' %}
 
 {% block body -%}
-    <div class="content pure-g">
-        <div class="content-header pure-g">
-            <div class="pure-u-1-2">
-                <h2 class="content-title">Ebooks</h2>
-                <p class="content-subtitle">
-                    Seleccione un ebooks para ir al recurso.
-                </p>
-            </div>
-        </div>
-        <div class="content-body pure-u-1">
-            <table class="pure-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                    </tr>
-                </thead>
-                <tbody>
+    <div id="main">
+        <aside id="contexto">
+            <nav id="aside">
+                <ul class="lateral-page">
+                    <li class="pagenav">
+                        <h3>Áreas temáticas</h3>
+                        <ul>
+                            {% for category in categories %}
+                            <li class="page_item {% if(category.id == id) %} current_page_item {% endif %}">
+                                <a href="{{ path('search_ebooks_by_category', { 'id': category.id }) }}">{{ category.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section id="page" class="ariel">
+            <article>
+                <h2>Libros Electrónicos</h2>
+                <h3>{{ category.name }}</h3>
+                <table>
                     {% for entity in entities %}
-                    <tr {{  cycle(['class=pure-table-odd', ''] , loop.index)  }}>
-                        <td>
-                            <a href="{{ entity.url }}" target="_blank">{{ entity.title }}</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>
+                                <br>
+                                <a href="{{ entity.url }}" target="_blank">
+                                    <h5>{{ entity.title }}</h5>
+                                </a>
+                                <br>
+                                {{ entity.author }}
+                                <br>
+                                {{ entity.year }} 
+                                <br>
+                                <small>{{ entity.access }}</small>
+                                <br>
+                                <p>
+                                    <a href="{{ path('broken_ebook', { 'id': entity.id, 'cat': category.id }) }}" class="btn btn-default btn-xs pull-right" onclick="return confirm('¿Está seguro que desea reportar este enlace como roto?')">
+                                        <span class="glyphicon glyphicon-link"> Enlace Roto</span>
+                                    </a>
+                                </p>
+                            </td>
+                        </tr>
                     {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                </table>
+            </article>
+        </section>
     </div>
 {% endblock %}

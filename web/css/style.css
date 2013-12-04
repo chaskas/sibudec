@@ -1,0 +1,1803 @@
+@font-face {
+    font-family: 'Swiss 721 Bold Condensed';
+    src: url('../fonts/swiss-721-bold-condensed.eot');
+    src: url('../fonts/swiss-721-bold-condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/swiss-721-bold-condensed.woff') format('woff'),
+         url('../fonts/swiss-721-bold-condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Swiss 721 Bold';
+    src: url('../fonts/swiss-721-bold.eot');
+    src: url('../fonts/swiss-721-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/swiss-721-bold.woff') format('woff'),
+         url('../fonts/swiss-721-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Swiss 721 Light Condensed';
+    src: url('../fonts/swiss-721-light-condensed.eot');
+    src: url('../fonts/swiss-721-light-condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/swiss-721-light-condensed.woff') format('woff'),
+         url('../fonts/swiss-721-light-condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Swiss 721 Light';
+    src: url('../fonts/swiss-721-light.eot');
+    src: url('../fonts/swiss-721-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/swiss-721-light.woff') format('woff'),
+         url('../fonts/swiss-721-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Cinzel Bold';
+    src: url('../fonts/cinzel-bold.eot');
+    src: url('../fonts/cinzel-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cinzel-bold.woff') format('woff'),
+         url('../fonts/cinzel-bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/helvetica-neue-lt-std-medio.eot');
+    src: url('../fonts/helvetica-neue-lt-std-medio.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helvetica-neue-lt-std-medio.woff') format('woff'),
+         url('../fonts/helvetica-neue-lt-std-medio.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* -- */
+@font-face {
+    font-family: 'Helvetica Neue Condensed';
+    src: url('../fonts/helvetica-neue-lt-std-medio-condensed.eot');
+    src: url('../fonts/helvetica-neue-lt-std-medio-condensed.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helvetica-neue-lt-std-medio-condensed.woff') format('woff'),
+         url('../fonts/helvetica-neue-lt-std-medio-condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Roman';
+    src: url('../fonts/helvetica-neue-lt-std-roman.eot');
+    src: url('../fonts/helvetica-neue-lt-std-roman.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helvetica-neue-lt-std-roman.woff') format('woff'),
+         url('../fonts/helvetica-neue-lt-std-roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/**********************************/
+/*** Estilo para el núcleo HTML ***/
+/**********************************/
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #ffffff;
+  font-family: 'Swiss 721 Light', sans-serif;
+}
+input, textarea, select {
+  border: none;
+  color: #6e6e6e;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: 80%;
+}
+a {
+  color: #38bdfe;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8313;
+  text-decoration: underline;
+}
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.nuevesesenta {
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+}
+
+/**********************************************/
+/*** Estilo para las capas de estructurales ***/
+/**********************************************/
+header {
+        background: #202020;
+  position: relative;
+  width: auto;
+}
+  header #barra-azul {
+    background-color: #003b67;
+    height: 9px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 0;
+  }
+  header #barra-amarilla {
+    background-color: #ffa103;
+    height: 9px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    z-index: 0;
+  }
+  header #barra-superior {
+    background-color: #202020;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    width: 25%;
+    z-index: 9;
+  }
+        
+  header #barra-principal {
+    background-color: #035ea4;
+    bottom: -40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    width: 25%;
+    z-index: 9;
+  }
+  header #udec {
+    background-color: #003b67;
+    border-right: 190px solid #ffa103;
+    clear: both;
+    height: 9px;
+    margin: 0 auto;
+    position: relative;
+    width: 770px;
+    z-index: 9;
+  }
+  header hgroup#institucional {
+    float: left;
+    background: transparent url('images/institucionales.png') center center no-repeat;
+    height: 38px;
+    margin: 40px 0;
+    position: relative;
+    width: 266px;
+    z-index: 9;
+  }
+  header form#buscador {
+    background-color: #202020;
+    float: right;
+    height: 30px;
+    position: relative;
+    width: auto;
+    z-index: 99
+  }
+  header nav#superior {
+    background: center center no-repeat;
+    float: right;
+    height: 30px;
+    position: relative;
+    width: 270px;
+    z-index: 99;
+  }
+        
+        header div#superior-izq {
+            width: 450px;
+            height: 31px;
+            float: left;
+  }
+        div#superior-izq img{
+            float: left;
+            height: 23px;
+            margin: 4px 0 0 0;
+        }
+        div#superior-izq h1{
+            float: left;
+            font-size: .8em;
+            color: #FFF;
+            margin: 8px 0 0 20px;
+            padding: 0 0 0 20px;
+            border-left: solid 1px #FFF;
+            
+        }
+        
+  header nav#principal {
+            background: transparent url('images/principal.png') center center no-repeat;
+            bottom: -40px;
+            height: 40px;
+            left: 0;
+            position: absolute;
+            width: 480px;
+            z-index: 99;
+  }
+        
+        /* Barra de menu sólo para los interiores */
+        #menu-interiores{
+            position: relative;
+            width: 100%;
+            height: 65px;
+            background: #035ea4;
+        }
+        #menu-interiores #sibudec-interior{float:left; width: 137px; margin: 10px 0 0 0;}
+        #menu-interiores #sibudec-interior a{}
+        #menu-interiores #sibudec-interior a img{}
+        
+        #menu-interiores #nav-interior{
+            float: right;
+            width: 456px;
+            height: 65px;
+        }
+        
+
+        
+div#wrapper {
+  background-color: #ffffff;
+  border: solid #ffffff;
+  border-width: 1px 0 12px 0;
+  height: auto;
+  min-height: 640px;
+  position: relative;
+  width: auto;
+}
+  div#wrapper div#banners {
+    height: 460px;
+    left: 0;
+    overflow: visible;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+    z-index: 0;
+  }
+        /* fondo gris bajao de las cajas de menu en el home*/
+        #fondo-gris{
+            float: left;
+            position: absolute;
+            width: 100%;
+            height: 170px;
+            background: #ececec;
+            top: 439px;
+        }
+        /* fondo gris en los */
+        #fondo-gris-interior{
+            float: left;
+            position: absolute;
+            width: 100%;
+            height: 170px;
+            background: #ececec;
+            top: 0;
+        }
+        
+        /* Contenedor para el Logo de SIBUDEC y el menu principal*/
+        div#wrapper div#logo-sibudec{
+            float:left; 
+            margin: 20px 0 0 0; 
+            width: 100%; 
+            height: 65px
+        }
+            /* Logo SIBUDEC */
+            div#wrapper div#logo-sibudec img{
+                background: #074777; 
+                padding: 10px 30px 10px 30px;
+            }
+        
+            /* Menu Principal*/
+            nav#menu-1{
+                position: relative;
+                float: right;
+                background: #074777;
+                top: 32px;
+                z-index: 999;
+            }
+            nav#menu-1-interior{
+                position: relative;
+                float: right;
+                z-index: 999;
+                margin: 15px 0 0 0;
+            }
+            nav#menu-1-interior ul#nav-sibudec,
+            nav#menu-1-interior ul#nav-biblioteca,
+            nav#menu-1-interior ul#nav-contacto,
+            nav#menu-1 ul#nav-sibudec,
+            nav#menu-1 ul#nav-biblioteca,
+            nav#menu-1 ul#nav-contacto{
+                float: left;
+            }
+            
+            nav#menu-1-interior ul#nav-sibudec li,
+            nav#menu-1-interior ul#nav-biblioteca li,
+            nav#menu-1-interior ul#nav-contacto li,
+            nav#menu-1 ul#nav-sibudec li,
+            nav#menu-1 ul#nav-biblioteca li,
+            nav#menu-1 ul#nav-contacto li{
+                position: relative;
+                float: left;
+                padding: 10px 20px;
+            }
+            
+            nav#menu-1-interior ul#nav-sibudec li h3,
+            nav#menu-1-interior ul#nav-biblioteca li h3,
+            nav#menu-1 ul#nav-sibudec li h3,
+            nav#menu-1 ul#nav-biblioteca li h3{
+                font-size: .9em;
+                cursor: pointer;
+                color: #FFF;
+                font-family: 'Swiss 721 Bold Condensed';
+            }
+            
+            nav#menu-1-interior ul#nav-contacto li a,
+            nav#menu-1 ul#nav-contacto li a{
+                color: #FFF;
+                font-size: .9em;
+                font-weight: bold;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: 'Swiss 721 Bold Condensed';
+            }
+       
+            /*Sub menu oculto SIBUDEC*/
+            nav#menu-1-interior ul#nav-sibudec li ul,
+            nav#menu-1 ul#nav-sibudec li ul{
+                display: none;
+                position: absolute;
+                min-width: 100px;
+                top: 33px;
+                right: 0;
+                background: #083c63;
+                padding: 10px 0;
+            }
+            
+            /*Sub menu oculto Biblioteca*/
+            nav#menu-1-interior ul#nav-biblioteca li ul,
+            nav#menu-1 ul#nav-biblioteca li ul{
+                display: none;
+                position: absolute;
+                min-width: 500px;
+                top: 33px;
+                right: 0;
+                background: #083c63;
+                padding: 10px 20px;
+            }
+            
+            nav#menu-1-interior ul li ul li a,
+            nav#menu-1 ul li ul li a{
+                color: #FFF;
+                background: url('../img/vineta-amarilla.png') 5px 50% no-repeat;
+                padding: 0 0 0 20px;
+            }
+        
+            nav#menu-1-interior ul#nav-sibudec li:hover,
+            nav#menu-1-interior ul#nav-biblioteca li:hover,
+            nav#menu-1-interior ul#nav-contacto li:hover,
+            nav#menu-1 ul#nav-sibudec li:hover,
+            nav#menu-1 ul#nav-biblioteca li:hover,
+            nav#menu-1 ul#nav-contacto li:hover{
+               background: #083c63;  
+            }
+            
+            nav#menu-1-interior ul#nav-sibudec li:hover > h3,
+            nav#menu-1-interior ul#nav-biblioteca li:hover > h3,
+            nav#menu-1-interior ul#nav-contacto li:hover > a,
+            nav#menu-1 ul#nav-sibudec li:hover > h3,
+            nav#menu-1 ul#nav-biblioteca li:hover > h3,
+            nav#menu-1 ul#nav-contacto li:hover > a{
+                color: #ff9f04 !important;
+            }
+            
+            nav#menu-1-interior ul#nav-sibudec li:hover > ul,
+            nav#menu-1-interior ul#nav-biblioteca li:hover > ul,
+            nav#menu-1 ul#nav-sibudec li:hover > ul,
+            nav#menu-1 ul#nav-biblioteca li:hover > ul{
+                display: block;
+            }
+            
+
+            nav#menu-1-interior .page-item-59, nav#menu-1-interior .page-item-61, nav#menu-1-interior .page-item-63,
+            nav#menu-1-interior .page-item-65, nav#menu-1-interior .page-item-67, nav#menu-1-interior .page-item-69,
+            nav#menu-1-interior .page-item-71, nav#menu-1-interior .page-item-73, nav#menu-1-interior .page-item-75,
+            nav#menu-1-interior .page-item-77, nav#menu-1-interior .page-item-79, nav#menu-1-interior .page-item-343, 
+            nav#menu-1 .page-item-59, nav#menu-1 .page-item-61, nav#menu-1 .page-item-63,
+            nav#menu-1 .page-item-65, nav#menu-1 .page-item-67, nav#menu-1 .page-item-69,
+            nav#menu-1 .page-item-71, nav#menu-1 .page-item-73, nav#menu-1 .page-item-75,
+            nav#menu-1 .page-item-77, nav#menu-1 .page-item-79, nav#menu-1 .page-item-343 {
+                width: 50%;
+                float: left;
+                display: inline;
+                padding: 10px 0 !important;
+            }
+        
+            nav#menu-1-interior ul li ul li a,
+            nav#menu-1 ul li ul li a{
+                font-size: .8em;
+            }
+
+
+        
+        
+        
+       
+        /* Menu de 4 bloques */
+        ul.lateral-home{
+            float: left;
+            width: 100%;
+        }
+        ul.lateral-home li{
+            float: left;
+        }
+        
+  div#wrapper nav#botones {
+    top: 140px;
+    height: 15px;
+    left: 20px;
+    position: absolute;
+    width: 80px;
+    z-index: 999;
+  }
+  div#wrapper div#buscador-integrado {
+    height: 128px;
+    margin: 120px 0 0 0;
+    position: relative;
+    width: 100%;
+  }
+  div#wrapper div#main {
+    height: 100%;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+                overflow: hidden;
+  }
+
+footer {
+  background-color: #035ea4;
+  /*border-top: 30px solid #e0e0e0;*/
+  height: 96px;
+  position: relative;
+  width: auto;
+}
+  #bajada {
+    float: left;
+    height: 96px;
+    position: relative;
+    width: 480px;
+  }
+  #cfrd {
+    float: right;
+    height: 96px;
+    position: relative;
+    width: 240px;
+  }
+
+/***********************************************************/
+/*** Estilo para las capas de bloques, widgets y módulos ***/
+/***********************************************************/
+
+/* CONTENEDOR DEL BLOQUE SUBIR ---------------------------------------------------*/
+#top {
+  background: url('images/top.png') center center no-repeat;
+  background-color: #ffa103;
+  bottom: 10px;
+  cursor: pointer;
+  display: none;
+  height: 30px;
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  text-indent: -99px;
+  width: 30px;
+  z-index: 9999;
+}
+#top:hover {
+  background-color: #ef4507;
+}
+
+/* CONTENEDOR DE BLOQUE INSTITUCIONAL UDEC ------------------------------------*/
+#institucional h1 {
+  float: left;
+  height: 38px;
+}
+#institucional h2 {
+  float: left;
+  margin-left: 26px;
+  height: 38px;
+}
+#institucional h1 a {
+  display: block;
+  height: 38px;
+  width: 96px;
+}
+#institucional h2 a {
+  display: block;
+  height: 38px;
+  width: 144px;
+}
+
+/* CONTENEDOR DE BLOQUE DEL MENU SUPERIOR -------------------------------------*/
+#superior ul {
+  float: right;
+  height: 30px;
+}
+#superior ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+#superior ul li a {
+  border-right: 1px solid #ffffff;
+  color: #ffffff;
+  display: block;
+  font-size: .8em;
+  height: 14px;
+  line-height: 14px;
+  margin: 8px 0;
+  padding: 0 9px;
+  text-align: center;
+}
+
+/* CONTENEDOR DE BLOQUE BUSCADOR DE CONTENIDOS --------------------------------*/
+#buscador input[type="text"] {
+  background: #202020 url('../img/buscador-inputtext.png') center center no-repeat;
+  color: #202020;
+  cursor: pointer;
+  height: 24px;
+  margin: 3px;
+  width: 24px;
+  -webkit-transition-duration:400ms;
+  -webkit-transition-property:width,background;
+  -webkit-transition-timing-function:ease;
+  -moz-transition-duration:400ms;
+  -moz-transition-property:width,background;
+  -moz-transition-timing-function:ease;
+  -o-transition-duration:400ms;
+  -o-transition-property:width,background;
+  -o-transition-timing-function:ease;
+}
+#buscador input[type="text"]:focus {
+  background: #ffffff;
+  color: #202020;
+  cursor: text;
+  margin-left: 10px;
+  padding: 0 5px;
+  width: 192px;
+}
+
+
+/* CONTENEDOR DE BLOQUE DEL MENU PRINCIPAL ------------------------------------*/
+#principal ul {
+  list-style: none;
+  margin: 0;
+}
+#principal ul li {
+  background-color: transparent;
+  position: relative;
+}
+#principal ul li a {
+  display: block;
+  font-family: 'Swiss 721 Bold Condensed', sans-serif;
+  text-decoration: none;
+}
+#principal > ul {
+  height: 40px;
+  margin: 0 auto;
+  position: relative;
+  width: 480px;
+}
+#principal > ul > li {
+  float: left;
+  margin: 0 1px;
+}
+#principal > ul > li > a {
+  color: #ffffff;
+  font-size: 1.0em;
+  line-height: 40px;
+  padding-right: 18px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#principal > ul > li > a:last-child {
+  padding-right: 0;
+}
+#principal > ul > li:hover > a {
+  color: #ffa103;
+  cursor: default;
+  font-style: italic;
+}
+#principal > ul > li.current_page_parent > a {
+  color: #ffa103;
+  font-style: italic;
+  font-weight: bold;
+}
+#principal ul ul {
+  height: auto;
+  left: 0;
+  list-style-type: none;
+  padding: 9px 0;
+  position: absolute;
+  top: -9999em;
+  width: 192px;
+}
+#principal ul li.page-item-7 ul {
+  width: 312px;
+}
+#principal ul li.linkcat ul {
+  width: 240px;
+}
+#principal ul ul li {
+  float: none;
+  padding: 0 6px;
+}
+#principal ul ul li a {
+  border-bottom: 1px solid #e0e0e0;
+  color: #434343;
+  display: block;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: .8em;
+  line-height: 18px;
+  padding: 3px 6px;
+  text-align: left;
+}
+#principal ul ul li a:hover {
+  background: #035ea4 url('images/principal-lihover.png') 5px 50% no-repeat;
+  color: #ffffff;
+  font-style: italic;
+  text-indent: 6px;
+}
+#principal ul ul li.current_page_item a {
+  background: #ef4607 url('images/principal-lihover.png') 5px 50% no-repeat;
+  color: #ffffff;
+  font-style: italic;
+  font-weight: bold;
+  text-indent: 6px;
+}
+/* Shows submenus */
+#principal ul li:hover ul,
+#principal ul li.nav-hover ul {
+  background: #ffffff url('images/principal-ulhover.png') 24px 0px no-repeat;
+  left: 0;
+  top: 36px; /* match top ul list item height */
+  z-index: 999;
+}
+
+/* CONTENEDOR DE BLOQUE DE BOTONES PARA BANNER  -------------------------------*/
+#botones ul {
+  height: 15px;
+  overflow: hidden;
+  position: relative;
+  width: 80px;
+}
+#botones ul li {
+  float: left;
+  margin: 0 3px 0 0;
+}
+#botones ul li a {
+  background-color: #ffffff;
+  color: #ffffff;
+  display: block;
+  height: 15px;
+  width: 15px;
+  /* CSS 3 borde con curva */
+  border-radius: 9px;
+  -khtml-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  -webkit-border-radius: 9px;
+  box-shadow: 2px 2px 2px #888888 inset;
+}
+#botones ul li a:hover {
+  background: #ef4507;
+}
+#botones ul li a.activo {
+  background: #ffa103;
+  font-weight: 700;
+}
+
+/* METABUSCADOR INTEGRADO -----------------------------------------------------*/
+#buscador-integrado > div {
+  background: transparent url('images/buscador-integrado-div.png') center center repeat;
+  height: 96px;
+  position: relative;
+  width: 960px;
+}
+#buscador-integrado fieldset {
+  height: 96px;
+  position: relative;
+  width: 960px;
+}
+#buscador-integrado fieldset span {
+  float: left;
+}
+#buscador-integrado fieldset a {
+  background: transparent url('images/buscador-integrado-fieldset-a.png') 0% 40% no-repeat;
+  clear: both;
+  color: #ffffff;
+  display: block;
+  font-family: 'Swiss 721 Bold Condensed', sans-serif;
+  font-size: 0.7em;
+  line-height: 30px;
+  margin: 0 0 0 20px;
+  text-indent: 10px;
+  text-transform: uppercase;
+        width: 250px;
+}
+#buscador-integrado input[type="text"] {
+  background: #ffffff url('images/buscador-integrado-inputtext.png') 99% 50% no-repeat;
+  border: 1px solid #626262;
+  color: #6e6e6e;
+  float: left;
+  height: 28px;
+  line-height: 28px;
+  margin: 20px 10px 10px 20px;
+  padding: 0 3px;
+  /*width: 250px;*/
+}
+#buscador-integrado select {
+  background: #ffffff;
+  border: 1px solid #626262;
+  color: #6e6e6e;
+  float: left;
+  height: 30px;
+  margin: 20px 10px 10px 0;
+  padding: 4px 3px;
+  width: 188px;
+}
+#buscador-integrado input[type="submit"] {
+  background-color: #ef4507;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  float: left;
+  font-family: 'Cinzel Bold', serif;
+  font-size: 1.0em;
+  height: 30px;
+  margin: 20px 0 10px 0;
+  text-transform: uppercase;
+  width: 128px;
+}
+#buscador-integrado input[type="submit"]:hover {
+  background-color: #ffa103;
+}
+#buscador-integrado ul {
+  height: 30px;
+  margin: 0 0 0 20px;
+  padding: 0;
+  width: 620px;
+}
+#buscador-integrado ul li {
+  float: left;
+  height: 30px;
+  margin: 0 3px 0 0;
+  list-style: none;
+}
+#buscador-integrado ul li a {
+  background: transparent url('images/buscador-integrado-div.png') center center repeat;
+  color: #ffffff;
+  display: block;
+  font-family: 'Swiss 721 Bold Condensed', sans-serif;
+  font-size: .7em;
+  line-height: 27px;
+  padding: 3px 12px 0 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  /* CSS 3 borde con curva */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+#buscador-integrado ul li a:hover {
+    background: #ef4507;
+    color: #ffffff;
+}
+#buscador-integrado ul li a.activo {
+    background: #ffa103;
+    color: #ffffff;
+}
+
+/* CONTENEDOR DE MODULO MIGAS DE PAN ------------------------------------------*/
+#main nav#breadcrumbs {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+#main nav#breadcrumbs span {
+  color: #000000;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: .8em;
+  line-height: 15px;
+}
+#main nav#breadcrumbs span a {
+  color: #ef4507;
+  text-decoration: none;
+}
+#main nav#breadcrumbs span a:hover {
+  color: #035ea4;
+}
+
+/* CONTENEDOR DE BLOQUE MAIN SECTION ------------------------------------------*/
+#main section {
+  background: #ffffff url('images/main.jpg') left top no-repeat;
+  float: left;
+  min-height: 320px;
+  padding: 20px 30px;
+  position: relative;
+  width: 470px;
+}
+#main section hgroup {
+
+}
+#main section hgroup h3 {
+  float: left;
+  font-family: 'Helvetica Neue', serif;
+  font-size: 15px;
+  padding: 10px 0;
+  position: relative;
+  text-transform: uppercase;
+}
+#main section hgroup h3 img {
+  border: none;
+  float: left;
+  height: 25px;
+  padding: 0;
+  width: 25px;
+}
+#main section hgroup h3 span {
+  float: left;
+  line-height: 25px;
+  padding-left: 5px;
+}
+#main section article {
+
+}
+#main section article h2 {
+  clear: both;
+  color: #000000;
+  display: block;
+  font-family: 'Swiss 721 Bold Condensed', sans-serif;
+  font-size: 2.0em;
+  margin-bottom: 20px;
+}
+#main section article h2 a {
+  color: #000000;
+  text-decoration: none;
+}
+#main section article h3 {
+  clear: both;
+  color: #000000;
+  display: block;
+  font-family: 'Cinzel Bold', serif;
+  font-size: 1.0em;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+#main section article h3 a {
+  color: #000000;
+  text-decoration: none;
+}
+#main section article h4 {
+  clear: both;
+  color: #000000;
+  display: block;
+  font-size: .7em;
+  margin-bottom: 10px;
+        text-transform: uppercase;
+        line-height: 18px;
+}
+#main section article h4 a {
+  color: #000000;
+  text-decoration: none;
+}
+#main section article h5 {
+  clear: both;
+  color: #ef4507;
+  display: block;
+  font-family: 'Cinzel Bold', serif;
+  font-size: 1.0em;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+#main section article h6 {
+  clear: both;
+  color: #626262;
+  display: block;
+  font-family: 'Swiss 721 Bold', sans-serif;
+  font-size: .9em;
+  margin-bottom: 10px;
+}
+#main section article ol, #main section article ul {
+  display: block;
+  font-size: .8em;
+  margin: 0 20px 20px 20px;
+  /*padding: 20px 0;*/
+}
+#main section article ol {
+  list-style: upper-roman;
+}
+#main section article ul {
+  list-style: disc;
+}
+#main section article ol ol, #main section article ul ul {
+  font-size: 1.0em;
+  margin: 0 20px;
+  padding: 10px 0;
+}
+#main section article ol li, #main section article ul li {
+  color: #000000;
+  line-height: 24px;
+}
+#main section article li a {
+  color: #000000;
+  text-decoration: none;
+}
+#main section article li a:hover {
+  text-decoration: underline;
+}
+#main section article p {
+  color: #626262;
+  font-size: .8em;
+  line-height: 18px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
+#main section article a {
+  color: #000000;
+  text-decoration: none;
+}
+#main section article a:hover {
+  text-decoration: underline;
+}
+#main section article img {
+  border: 1px solid #035ea4;
+  padding: 2px;
+}
+#main section article img:hover {
+  border: 1px solid #ef4507;
+}
+#main section hr {
+  border: none;
+  display: block;
+  clear: both;
+  height: 1px;
+  overflow: hidden;
+}
+#main section article table {
+  margin-bottom: 20px;
+  width: 470px;
+}
+#main section article table tbody td, #main section article table td {
+  border-bottom: 1px solid #e0e0e0;
+  color: #000000;
+  font-size: 0.7em;
+  padding: 5px;
+  vertical-align: top;
+}
+#main section article table tbody td a, #main section article table td a {
+  color: #ef4607;
+  font-family: 'Swiss 721 Bold';
+}
+#main section article table thead th, #main section article table th {
+  background-color: #035ea4;
+  border-bottom: 1px solid #e0e0e0;
+  color: #ffffff;
+  font-family: 'Swiss 721 Bold';
+  font-size: 0.7em;
+  padding: 5px;
+  vertical-align: bottom;
+}
+#main section article tr.fila-uno {
+  background-color: #dcdadf;
+}
+#main section article tr.fila-dos {
+  background-color: #eeecef;
+}
+#main section article small {
+  color: #fda215;
+  font-size: .7em;
+  line-height: 21px;
+        text-transform: uppercase;
+        font-weight: bold;
+}
+#main section article strong {
+  font-family: 'Swiss 721 Bold', sans-serif;
+}
+#main section article em {
+  font-style: italic;
+}
+#main section article sup {
+  font-size: .6em;
+  vertical-align: super;
+}
+#main section article sub {
+  font-size: .6em;
+  vertical-align: sub;
+}
+
+/* CONTENEDOR DE MODULO DE PAGINACION DE RESULTADOS ---------------------------*/
+#main section nav#pagenavi {
+  float: left;
+  font-family: 'Swiss 721 Bold', sans-serif;
+  font-size: .8em;
+  height: 20px;
+  margin-top: 30px;
+  text-align: left;
+}
+#main section nav#pagenavi a {
+  color: #000000;
+  display: inline;
+  padding: 5px 7px 2px 7px;
+  text-decoration: none;
+}
+#main section nav#pagenavi a:hover {
+  text-decoration: underline;
+}
+#main section nav#pagenavi a.pages {
+  cursor: default;
+  margin: 0 10px 0 0;
+  padding: 0;
+  text-decoration: none;
+}
+#main section nav#pagenavi span.current {
+  background-color: #035ea4;
+  color: #ffffff;
+  font-size: .9em;
+  margin: 0 5px;
+  padding: 5px 7px 2px 7px;
+}
+#main section nav#pagenavi a.first, #main section nav#pagenavi a.last {
+  background-color: #ef4507;
+  color: #ffffff;
+  font-size: .9em;
+  margin: 0 5px;
+}
+#main section nav#pagenavi .single_page {
+  background-color: #ffffff;
+  font-size: .9em;
+  margin: 0 5px;
+}
+#main section nav#pagenavi .single_page:hover {
+  background-color: #e0e0e0;
+}
+
+/* 
+*   Contenedor modulo servicios (sidebar en Home)
+-------------------------------------*/
+
+/* contenedor Principal*/
+#main aside#servicios {
+    float: left;
+    min-height: 320px;
+    padding: 20px 0;
+    position: relative;
+    width: 650px;
+    margin: 0 0 0 10px;
+
+}
+
+/* imagenes de relleno*/
+#main aside#servicios div#imagenes {
+    float: left;
+    width: 147px;
+    height: 430px;
+    margin: 0 30px 0 0;
+    padding: 0 20px 0 0;
+    background: url('images/sombra-vertical-home.png') right top no-repeat;
+}
+#bibliotecaudec{
+    margin: 0 0 100px 0;
+}
+
+
+
+/* Encuesta */
+#main aside#servicios #encuesta {
+  background-color: #035ea4;
+  float: left;
+  height: auto;
+  padding: 20px;
+  width: 190px;
+        margin: 0 0 20px 34px;
+        -webkit-border-radius:  10px;
+        -moz-border-radius:     10px;
+        border-radius:          10px;
+}
+#main aside#servicios #encuesta h2 {
+  color: #fca311;
+  font-size: 1em;
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+        font-weight: bold;
+}
+#main aside#servicios #encuesta p {
+  color: #ffffff;
+}
+#main aside#servicios #encuesta p strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+#main aside#servicios #encuesta p a {
+  color: #ffffff;
+  font-size: 11px;
+}
+#main aside#servicios #encuesta ul {
+  margin: 15px;
+}
+.wp-polls ul li, .wp-polls-ul li, .wp-polls-ans ul li{
+    margin: 0 0 20px 0;
+    color: #FFF;
+    font-size: .8em;
+}
+#main aside#servicios #encuesta label {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 18px;
+}
+#main aside#servicios #encuesta input[type=radio] {
+  color: #de0000;
+  margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+#main aside#servicios #encuesta input[type=button] {
+  background-color: #ef4507;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  font-size: 13px;
+  height: 21px;
+  margin: 0 auto 12px auto;
+  width: 96px;
+}
+#main aside#servicios #encuesta input[type=button]:hover {
+  background-color: #ffa103;
+}
+
+/* contenedor tercera columna 
+consultar - interes - redes sociales 
+-----------------------------------------*/
+#main aside#servicios #content-info {
+    float: left;
+    width: 189px;
+    height: 1%;
+    overflow: hidden;
+}
+
+/* Chat (Consulte a un bibliotecologo)*/
+#contexto #chat,
+#main aside#servicios #content-info #chat {
+  background-color: transparent;
+  float: left;
+  height: 90px;
+  width: 100%;
+        margin: 0 0 20px 0;
+}
+#contexto #chat a,
+#main aside#servicios #content-info #chat a {
+  background-color: #ffa103;
+  display: block;
+}
+
+#contexto #chat a:hover,
+#main aside#servicios #content-info #chat a:hover {
+  background-color: #ef4507;
+}
+
+#contexto #chat a img,
+#main aside#servicios #content-info #chat a img {
+  display: block;
+  height: 90px;
+  width: 190px;
+}
+
+/* sitios de interes*/
+#main aside#servicios #content-info #site-interes{
+    float: left;
+    width: 189px;
+    height: 73px;
+    margin: 0 0 20px 0;
+}
+#main aside#servicios #content-info #site-interes a{
+    float: left;
+    background: url(images/sitios-de-interes.jpg) no-repeat;
+    width: 189px;
+    height: 73px;
+    text-indent: -9999px;
+}
+#main aside#servicios #content-info #site-interes a:hover{
+    background: url(images/sitio-de-interes-rollover.jpg) no-repeat;
+}
+
+
+/* redes sociales */
+#main aside#servicios #content-info #rsociales{
+    float: left;
+    width: 189px;
+    height: 28px;
+}
+#main aside#servicios #content-info #rsociales p{
+    float: left;
+    font-size: .8em;
+    line-height: 28px;
+    color: #074777;
+    font-weight: bold;
+}
+#main aside#servicios #content-info #rsociales img{
+    margin: 0 0 0 20px;
+}
+
+
+
+/* CONTENEDOR DE MODULO CONTEXTO NEVEGACION
+ ESTILOS PARA EL HOME Y PÁGINAS INTERNAS  
+-----------------------------------*/
+#main aside#contexto-home {
+  float: left;
+  min-height: 320px;
+  padding: 0 0 20px 0;
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
+#main aside#contexto {
+  background-color: #ffffff;
+        float: left;
+        min-height: 320px;
+        padding: 20px 0 20px 0;
+        margin: 0 0 10px 0;
+        position: relative;
+        width: 240px;
+        z-index: 9;
+        -webkit-box-shadow: -1px 5px 10px rgba(209, 209, 209, 0.75);
+            -moz-box-shado: -1px 5px 10px rgba(209, 209, 209, 0.75);
+                box-shadow: -1px 5px 10px rgba(209, 209, 209, 0.75);
+}
+#main aside#contexto-home #aside-home{
+    float: left;
+    width: 100%;
+}
+
+#main aside#contexto #aside {
+    background-color: #ffffff;
+    width: 195px;
+    margin: 0 20px;
+    background: #f7f7f7;
+}
+
+ul.lateral-home li.pagenav,
+ul.lateral-home li#linkcat-7{
+    width: 220px;
+    margin: 0 10px 0 10px;
+    min-height: 290px;
+    max-height: 290px;
+    overflow: hidden;
+    background: #FFF;
+    /* sombras*/
+    -webkit-box-shadow: 0px 5px 5px rgba(209, 209, 209, 0.94);
+    -moz-box-shadow:    0px 5px 5px rgba(50, 50, 50, 0.94);
+    box-shadow:         0px 5px 5px rgba(209, 209, 209, 0.94);
+}
+
+#main aside#contexto-home #aside-home h3,
+#main aside#contexto-home #aside-home h2{
+    font-family: 'Helvetica Neue Roman', serif;
+    font-size: .9em;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    text-transform: uppercase;
+    background: #074777;
+    min-height: 30px;
+    color: #FFF;
+}
+#main aside#contexto #aside h3{
+    font-family: 'Helvetica Neue Condensed', serif;
+    font-size: .9em;
+    padding: 10px 0;
+    position: relative;
+    text-transform: uppercase;
+    background: #052c49;
+    text-align: center;
+    color: #FFF;
+}
+.centrar-title {
+    float: left;
+    padding: 10px 0 0 23px;
+    text-align: center;
+}
+#main aside#contexto #aside h3 a,
+#main aside#contexto-home #aside-home h3 a{
+  color: #000000;
+}
+
+#main aside#contexto-home #aside-home h3 img,
+#main aside#contexto #aside h3 img{
+  float: left;
+  height: 25px;
+  width: 25px;
+}
+
+#main aside#contexto-home #aside-home h3 span{
+    width: 165px;  
+    color: #FFF;
+    line-height: 15px;
+    
+}
+
+#main aside#contexto #aside h3 span{
+  color: #FFF;
+  line-height: 15px;
+  padding-left: 5px;
+  width: 165px;
+}
+#main aside#contexto-home #aside-home ul ul{
+        margin: 0 0 20px 30px;  
+  width: 165px;
+}
+#main aside#contexto #aside ul ul{
+  margin: 10px 0 20px 10px;
+        width: 175px;
+}
+#main aside#contexto-home #aside-home ul ul li{
+    float: left;
+    width: 100%;
+    margin: 4px 0;
+}
+
+#main aside#contexto #aside ul ul li{
+
+}
+#main aside#contexto-home #aside-home ul ul li a,
+#main aside#contexto #aside ul ul li a{
+  background: #ffffff url('images/lateral-li.png') 5px 50% no-repeat;
+  border-bottom: 1px solid #e0e0e0;
+  color: #626262;
+  display: block;
+  font-size: .7em;
+  font-style: normal;
+  line-height: 18px;
+  padding: 3px 3px 3px 15px;
+  text-decoration: none;
+}
+#main aside#contexto-home #aside-home ul ul li a:hover,
+#main aside#contexto #aside ul ul li a:hover{
+  background: #ef4607 url('images/lateral-lihover.png') 10px 50% no-repeat;
+  color: #ffffff;
+  font-style: italic;
+  padding-left: 21px;
+}
+#main aside#contexto-home #aside-home ul ul li.current_page_item a,
+#main aside#contexto #aside ul ul li.current_page_item a, 
+#main aside#contexto-home #aside-home ul ul li.current-cat a, 
+#main aside#contexto #aside ul ul li.current-cat a{
+  background: #ef4607 url('images/lateral-lihover.png') 15px 50% no-repeat;
+  color: #ffffff;
+  padding-left: 25px;
+}
+
+#leer-mas-sibudec {
+    float: left;
+    position: absolute; 
+    top: 265px;
+    left: 283px;
+    z-index: 99999999;
+    font-size: .8em;
+}
+
+#leer-mas-sibudec a {
+    color: #035ea4;
+}
+#leer-mas-sibudec a:hover {
+    color: #ef4507;
+    text-decoration: none;
+    font-style: italic;
+}
+#leer-mas-ranking {
+    float: left;
+    position: absolute; 
+    top: 265px;
+    left: 763px;
+    z-index: 99999999;
+    font-size: .8em;
+}
+
+#leer-mas-ranking a {
+    color: #035ea4;
+}
+#leer-mas-ranking a:hover {
+    color: #ef4507;
+    text-decoration: none;
+    font-style: italic;
+}
+
+
+/* CONTENEDOR DE MODULO FRONTPAGE ---------------------------------------------*/
+#main section#frontpage {
+    width: 260px;
+    padding: 20px;
+}
+#main section#frontpage hgroup h3 span {
+    font-family: 'Helvetica Neue';
+}
+
+
+
+#main section#frontpage article {
+    float: left;
+    width: 260px;
+    margin: 0 0 30px 0;
+    background: url('images/sombra-noticias-home.png') bottom center no-repeat;
+}
+#main section#frontpage article img {
+  float: left;
+  height: 72px;
+  width: 96px;
+}
+#main section#frontpage article div {
+  float: left;
+  width: 348px;
+}
+#main section#frontpage article div p {
+  font-size: .8em;
+  line-height: 15px;
+}
+#main section#frontpage article div span a {
+  background: #035ea4 url('images/lateral-lihover.png') 5px 50% no-repeat;
+  color: #ffffff;
+  float: left;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: .8em;
+  line-height: 18px;
+  margin: -5px 0 30px 0;
+  padding: 0 12px;
+  text-decoration: none;
+}
+#main section#frontpage article div span a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* CONTENEDOR DE MODULO INDEX -------------------------------------------------*/
+#main section#index {
+    width: 640px;
+    margin: 0 0 0 20px;
+}
+#main section#index article {
+    float: left;
+    width: 640px;
+
+}
+#main section#index article a {
+    float: left;
+}
+#main section#index article img {
+  float: left;
+  height: 72px;
+  width: 96px;
+}
+#main section#index article hr.search {
+  background-color: #ffa103;
+  display: block;
+  height: 3px;
+  margin: 0 0 30px 0;
+  width: 30px;
+}
+
+#main section#index article div {
+  float: left;
+        width: 518px;
+        margin: 0 0 0 20px;
+}
+#main section#index article div small {
+    float: left;
+} 
+#main section#index article div h4 {
+    float: left;
+}
+#main section#index article div p {
+    float: left;
+    font-size: .8em;
+    line-height: 15px;
+}
+#main section#index article div span a {
+  background: #035ea4 url('images/lateral-lihover.png') 5% 45% no-repeat;
+  color: #ffffff;
+  float: left;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: .8em;
+  line-height: 18px;
+  margin: -5px 0 30px 0;
+  padding: 0 12px;
+  text-decoration: none;
+}
+#main section#index article div span a:hover {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+/* CONTENEDOR DE MODULO SEARCH ------------------------------------------------*/
+#main section#search {
+
+}
+#main section#search article {
+
+}
+#main section#search article hr {
+  background-color: #ffa103;
+  display: block;
+  height: 3px;
+  margin: 0 0 30px 0;
+  width: 30px;
+}
+
+/* CONTENEDOR DE MODULO BOLETIN DE NOVEDADES ----------------------------------*/
+#main section#boletin-de-novedades {background:red;
+  width: 470px;
+}
+#main section#boletin-de-novedades article {
+
+}
+
+/* CONTENEDOR DE MODULO PAGE --------------------------------------------------*/
+#main section#page {
+    width: 640px;
+    margin: 0 0 0 20px;
+}
+#main section#page article {
+
+}
+#main section#page article > img {
+  float: left;
+  height: 192px;
+  margin: 0 20px 20px 0;
+  width: 256px;
+}
+#main section#page h6.ui-state-default {
+  background: #ffffff url('images/ui-state-default.png') 99% center no-repeat;
+  border-bottom: 1px solid #626262;
+  color: #000000;
+  cursor: pointer;
+  padding: 5px;
+}
+#main section#page h6.ui-state-active {
+  background: #035ea4 url('images/ui-state-active.png') 99% center no-repeat;
+  color: #ffffff;
+  font-style: italic;
+}
+#main section#page article li a.descargar {
+  background: transparent url('images/descargar-a.png') center right no-repeat;
+  display: block;
+  font-family: 'Swiss 721 Bold', sans-serif;
+  font-style: italic;
+  line-height: 30px;
+  padding-right: 30px;
+}
+#main section#page article a.descargar {
+  background: transparent url('images/descargar-a.png') center right no-repeat;
+  font-family: 'Swiss 721 Bold', sans-serif;
+  font-style: italic;
+  line-height: 30px;
+  padding-right: 30px;
+}
+#main section#page article a.descargar:hover {
+  /*background: transparent url('images/descargar-ahover.png') center right no-repeat;*/
+}
+#main section#page article ul.marco {
+  background-color: #e0e0e0;
+  padding: 20px 20px 30px 20px;
+}
+#main section#page article ul.marco li {
+  border-bottom: 1px solid #c2c2c2;
+  list-style: disc;
+  margin: 0 20px;
+}
+#main section#page article a.boton {
+  background-color: #ffa103;
+  border: 1px solid #ef4507;
+  color: #ffffff;
+  font-family: 'Swiss 721 bold Condensed', sans-serif;
+  padding: 5px 20px;
+}
+#main section#page article a.boton:hover {
+  background-color: #ef4507;
+  border: 1px solid #ffa103;
+}
+#main section#page article ul.tabs {
+  background: transparent url('images/tabs.jpg') center bottom no-repeat;
+  float: left;
+  height: 48px;
+  margin: 0;
+  position: relative;
+  width: 864px;
+}
+#main section#page article nav.addthis_toolbox ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#main section#page article nav.addthis_toolbox ul li {
+  float: left;
+}
+
+/* CONTENEDOR DE MODULO PAGE CONTACTO -----------------------------------------*/
+#main section#page-contacto {
+
+}
+#main section#page-contacto article {
+
+}
+#main section#page-contacto article form {
+  background: transparent url('images/form-page-contacto.jpg') top right no-repeat;
+  height: 440px;
+  padding: 80px 40px 0 0;
+  width: 826px;
+}
+#main section#page-contacto article form p {
+  clear: both;
+  float: right;
+  padding: 0;
+  width: 306px;
+}
+#main section#page-contacto article form p.screenReader {
+  display: none;
+}
+#main section#page-contacto article form label {
+  color: #6e6e6e;
+  display: block;
+}
+#main section#page-contacto article form input[type=text], #main section#page-contacto form input[type=password] {
+  height: 24px;
+  margin-bottom: 5px;
+  padding: 0 5px;
+  width: 294px;
+}
+#main section#page-contacto article form textarea {
+  height: 96px;
+  padding: 0 5px;
+  width: 294px;
+}
+#main section#page-contacto article form input[type=submit] {
+  height: 36px;
+  margin-bottom: 10px;
+  width: 147px;
+}
+#main section#page-contacto article form input.captcha {
+  width: 137px;
+}
+#main section#page-contacto article form img {
+  border: 1px solid #908080;
+  float: right;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+#main section#page-contacto article form img:hover {
+  border: 1px solid #249de2;
+}
+#main section#page-contacto article form a {
+  float: right;
+  margin-right: 10px;
+}
+
+/* CONTENEDOR DE MODULO PAGE MAPA DEL SITIO -----------------------------------*/
+#main section#page-mapa-del-sitio {
+    margin: 0 0 0 20px;
+    width: 640px;
+}
+#main section#page-mapa-del-sitio article > ul {
+
+}
+#main section#page-mapa-del-sitio article > ul > li {
+  list-style: none;
+}
+#main section#page-mapa-del-sitio article > ul > li > a {
+  clear: both;
+  color: #ef4507;
+  display: block;
+  font-family: 'Cinzel Bold', serif;
+  font-size: 1.0em;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+#main section#page-mapa-del-sitio article ul.children {
+  margin: 0 30px;
+}
+#main section#page-mapa-del-sitio article ul.children > li {
+  list-style: inline square;
+  padding: 0 10px;
+}
+#main section#page-mapa-del-sitio article ul.children > li a {
+  color: #000000;
+  display: block;
+  font-family: 'Swiss 721 Bold Condensed', sans-serif;
+  font-size: 1.2em;
+}
+
+/* CONTENEDOR DE BLOQUE SINGLE POST -------------------------------------------*/
+#main section#single {
+    float: left;
+    width: 640px;
+    margin: 0 0 0 20px;
+}
+
+#main section#single article {
+
+}
+#main section#single article img {
+  float: right;
+  height: 108px;
+  width: 144px;
+}
+#main section#single article div {
+  float: left;
+  width: 460px;
+}
+#main section#single article nav.addthis_toolbox ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#main section#single article nav.addthis_toolbox ul li {
+  float: left;
+}
+section#cuatrocerocuatro{
+    float: left;
+    width: 900px;
+}
+
+/* CONTENEDOR DE BLOQUE BAJADA SIBUDEC ----------------------------------------*/
+#bajada p {
+  float: left;
+  font-family: 'Swiss 721 Light Condensed', sans-serif;
+  font-size: 0.8em;
+  line-height: 15px;
+  margin: 24px 0;
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+}
+#bajada p span {
+  color: #ffffff;
+}
+#bajada p a {
+  color: #ffffff;
+}
+#bajada p a img {
+  height: 35px;
+  float: left;
+  margin-right: 30px;
+  width: 141px;
+}
+
+/* CONTENEDOR DE BLOQUE PARA CREDITOS CFRD ------------------------------------*/
+#cfrd p {
+  float: right;
+  font-size: 0.7em;
+  line-height: 24px;
+  margin: 36px 0;
+  text-align: right;
+  width: 100%;
+}
+#cfrd p span {
+  color: #ffffff;
+}
+#cfrd p a {
+  color: #ffffff;
+}
+#cfrd p a img {
+  height: 24px;
+  vertical-align: bottom;
+  width: 56px;
+}

@@ -1,0 +1,26 @@
+{% extends '::front.html.twig' %}
+
+{% block body -%}
+<div id="main">
+  {{ include ('SibudecFrontBundle:Search:menu.html.twig') }}
+  <section id="page" class="ariel">
+    <article class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+
+      <div class="apply-success">
+        Estimad@: 
+        <br>
+        Su solicitud ha sido recibida y lo contactaremos a la brevedad.
+      </div>
+
+      <center>
+        Para mayor información contáctese con:
+        <br>
+        Servicio Bibliográfico - Biblioteca Central (4° piso).
+        <br>(56 – 41) 220 4558 o bien al correo bibhem@udec.cl
+      </center>
+
+    </article>
+  </section>
+
+</div>
+{% endblock %}

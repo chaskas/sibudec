@@ -26,20 +26,20 @@
                         </div>
                     </fieldset>
                     <fieldset>
-                        <div class="pure-u-1-3">
+                        <div class="pure-u-1-2">
                             {{ form_label(edit_form.author) }}
                             {{ form_errors(edit_form.author) }}
-                            {{ form_widget(edit_form.author, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.author, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
-                        <div class="pure-u-1-3">
+                        <div class="pure-u-1-4">
                             {{ form_label(edit_form.editorial) }}
                             {{ form_errors(edit_form.editorial) }}
-                            {{ form_widget(edit_form.editorial, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.editorial, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
-                        <div class="pure-u-1-3">
+                        <div class="pure-u-1-4">
                             {{ form_label(edit_form.year) }}
                             {{ form_errors(edit_form.year) }}
-                            {{ form_widget(edit_form.year, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.year, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                     </fieldset>
                     <fieldset>
@@ -53,34 +53,80 @@
                         <div class="pure-u-1-2">
                             {{ form_label(edit_form.category) }}
                             {{ form_errors(edit_form.category) }}
-                            {{ form_widget(edit_form.category, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.category, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                         <div class="pure-u-1-2">
                             {{ form_label(edit_form.source) }}
                             {{ form_errors(edit_form.source) }}
-                            {{ form_widget(edit_form.source, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.source, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="pure-u-1-4">
                             {{ form_label(edit_form.subscriptionType) }}
                             {{ form_errors(edit_form.subscriptionType) }}
-                            {{ form_widget(edit_form.subscriptionType, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.subscriptionType, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                         <div class="pure-u-1-4">
                             {{ form_label(edit_form.accessType) }}
                             {{ form_errors(edit_form.accessType) }}
-                            {{ form_widget(edit_form.accessType, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.accessType, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                         <div class="pure-u-1-4">
                             {{ form_label(edit_form.bibliography) }}
                             {{ form_errors(edit_form.bibliography) }}
-                            {{ form_widget(edit_form.bibliography, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_widget(edit_form.bibliography, {'attr': {'class': 'pure-input-2-3'}}) }}
                         </div>
                         <div class="pure-u-1-4">
-                            {{ form_label(edit_form.status) }}
-                            {{ form_errors(edit_form.status) }}
-                            {{ form_widget(edit_form.status, {'attr': {'class': 'pure-input-1'}}) }}
+                            {{ form_label(edit_form.purchaseMode) }}
+                            {{ form_errors(edit_form.purchaseMode) }}
+                            {{ form_widget(edit_form.purchaseMode, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="pure-u-1-4">
+                            {{ form_label(edit_form.access) }}
+                            {{ form_errors(edit_form.access) }}
+                            {{ form_widget(edit_form.access, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                        <div class="pure-u-1-4">
+                            {{ form_label(edit_form.inMetasearch) }}
+                            {{ form_errors(edit_form.inMetasearch) }}
+                            {{ form_widget(edit_form.inMetasearch, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                        <div class="pure-u-1-4">
+                            {{ form_label(edit_form.activationDate) }}
+                            {{ form_errors(edit_form.activationDate) }}
+                            {{ form_widget(edit_form.activationDate, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                        <div class="pure-u-1-4">
+                            {{ form_label(edit_form.userType) }}
+                            {{ form_errors(edit_form.userType) }}
+                            {{ form_widget(edit_form.userType, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="pure-u-1-3">
+                            {{ form_label(edit_form.isbn) }}
+                            {{ form_errors(edit_form.isbn) }}
+                            {{ form_widget(edit_form.isbn, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                        <div class="pure-u-1-3">
+                            {{ form_label(edit_form.purchaseYear) }}
+                            {{ form_errors(edit_form.purchaseYear) }}
+                            {{ form_widget(edit_form.purchaseYear, {'attr': {'class': 'pure-input-2-3'}}) }}
+                        </div>
+                        <div class="pure-u-1-3">
+                            {{ form_label(edit_form.broken) }}
+                            {{ form_errors(edit_form.broken) }}
+                            {{ form_widget(edit_form.broken) }}
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="pure-u-1">
+                            {{ form_label(edit_form.note) }}
+                            {{ form_errors(edit_form.note) }}
+                            {{ form_widget(edit_form.note, {'attr': {'class': 'pure-input-1'}}) }}
                         </div>
                     </fieldset>
                     {{ form_rest(edit_form) }}

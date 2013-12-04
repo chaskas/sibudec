@@ -24,76 +24,131 @@ class Ebook
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", unique=true, nullable=false)
+     * @ORM\Column(name="title", type="string", unique=false, nullable=false)
      */
-    protected $title;
+    protected $title;  //Titulo
 
     /**
      * @var string
      *
-     * @ORM\Column(name="author", type="string", unique=true, nullable=false)
+     * @ORM\Column(name="author", type="string", unique=false, nullable=false)
      */
-    protected $author;
+    protected $author; //Autor
 
     /**
      * @var integer
      *
      * @ORM\Column(name="year", type="integer", nullable=false)
      */
-    protected $year;
+    protected $year; //Año
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="ebooks")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
-    protected $category;
+    protected $category; //Área Temática
 
     /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", unique=false, nullable=false)
      */
-    protected $url;
+    protected $url; // URL
 
     /**
      * @ORM\ManyToOne(targetEntity="Source", inversedBy="ebooks")
-     * @ORM\JoinColumn(name="source_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="source_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
-    protected $source;
+    protected $source; // Base de datos y/o Plataforma
 
     /**
      * @ORM\ManyToOne(targetEntity="AccessType", inversedBy="ebooks")
-     * @ORM\JoinColumn(name="access_type_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="access_type_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
      */
-    protected $accessType;
+    protected $accessType; // Tipo Acceso
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Access", inversedBy="ebooks")
+     * @ORM\JoinColumn(name="access_id", referencedColumnName="id", onDelete="CASCADE", nullable=true)
+     */
+    protected $access; // Ingreso
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="purchaseMode", type="string", unique=false, nullable=false)
+     */
+    protected $purchaseMode; // Modalidad de Compra
 
     /**
      * @var string
      *
      * @ORM\Column(name="subscriptionType", type="string", unique=false, nullable=false)
      */
-    protected $subscriptionType;
+    protected $subscriptionType; // Tipo de suscripción
 
     /**
      * @var string
      *
      * @ORM\Column(name="bibliography", type="string", unique=false, nullable=true)
      */
-    protected $bibliography;
+    protected $bibliography; // Tipo de Bibliografía
 
     /**
      * @ORM\ManyToOne(targetEntity="Editorial", inversedBy="ebooks")
-     * @ORM\JoinColumn(name="editorial_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="editorial_id", referencedColumnName="id", onDelete="CASCADE")
      */
-    protected $editorial;
+    protected $editorial; // Editorial
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="status", type="integer", unique=false, nullable=false)
+     * @ORM\Column(name="inMetasearch", type="string", unique=false, nullable=true)
      */
-    protected $status;
+    protected $inMetasearch; // En Metabuscador
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="activationDate", type="string", unique=false, nullable=true)
+     */
+    protected $activationDate; // Fecha de Activación
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="note", type="string", unique=false, nullable=true)
+     */
+    protected $note; // Notas
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="userType", type="string", unique=false, nullable=false)
+     */
+    protected $userType; // Tipo de Usuario
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="isbn", type="string", unique=false, nullable=false)
+     */
+    protected $isbn; // ISBN
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="purchaseYear", type="string", unique=false, nullable=false)
+     */
+    protected $purchaseYear; // Año de compra
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="broken", type="boolean", unique=false, nullable=false)
+     */
+    protected $broken; // Enlace Roto
 
     
 
@@ -358,5 +413,212 @@ class Ebook
     public function getEditorial()
     {
         return $this->editorial;
+    }
+
+    /**
+     * Set access
+     *
+     * @param \Sibudec\AdminBundle\Entity\Access $access
+     * @return Ebook
+     */
+    public function setAccess(\Sibudec\AdminBundle\Entity\Access $access = null)
+    {
+        $this->access = $access;
+
+        return $this;
+    }
+
+    /**
+     * Get access
+     *
+     * @return \Sibudec\AdminBundle\Entity\Access 
+     */
+    public function getAccess()
+    {
+        return $this->access;
+    }
+
+    /**
+     * Set purchaseMode
+     *
+     * @param string $purchaseMode
+     * @return Ebook
+     */
+    public function setPurchaseMode($purchaseMode)
+    {
+        $this->purchaseMode = $purchaseMode;
+
+        return $this;
+    }
+
+    /**
+     * Get purchaseMode
+     *
+     * @return string 
+     */
+    public function getPurchaseMode()
+    {
+        return $this->purchaseMode;
+    }
+
+    /**
+     * Set inMetasearch
+     *
+     * @param string $inMetasearch
+     * @return Ebook
+     */
+    public function setInMetasearch($inMetasearch)
+    {
+        $this->inMetasearch = $inMetasearch;
+
+        return $this;
+    }
+
+    /**
+     * Get inMetasearch
+     *
+     * @return string 
+     */
+    public function getInMetasearch()
+    {
+        return $this->inMetasearch;
+    }
+
+    /**
+     * Set activationDate
+     *
+     * @param string $activationDate
+     * @return Ebook
+     */
+    public function setActivationDate($activationDate)
+    {
+        $this->activationDate = $activationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get activationDate
+     *
+     * @return string 
+     */
+    public function getActivationDate()
+    {
+        return $this->activationDate;
+    }
+
+    /**
+     * Set note
+     *
+     * @param string $note
+     * @return Ebook
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return string 
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Set userType
+     *
+     * @param string $userType
+     * @return Ebook
+     */
+    public function setUserType($userType)
+    {
+        $this->userType = $userType;
+
+        return $this;
+    }
+
+    /**
+     * Get userType
+     *
+     * @return string 
+     */
+    public function getUserType()
+    {
+        return $this->userType;
+    }
+
+    /**
+     * Set isbn
+     *
+     * @param string $isbn
+     * @return Ebook
+     */
+    public function setIsbn($isbn)
+    {
+        $this->isbn = $isbn;
+
+        return $this;
+    }
+
+    /**
+     * Get isbn
+     *
+     * @return string 
+     */
+    public function getIsbn()
+    {
+        return $this->isbn;
+    }
+
+    /**
+     * Set purchaseYear
+     *
+     * @param string $purchaseYear
+     * @return Ebook
+     */
+    public function setPurchaseYear($purchaseYear)
+    {
+        $this->purchaseYear = $purchaseYear;
+
+        return $this;
+    }
+
+    /**
+     * Get purchaseYear
+     *
+     * @return string 
+     */
+    public function getPurchaseYear()
+    {
+        return $this->purchaseYear;
+    }
+
+    /**
+     * Set broken
+     *
+     * @param boolean $broken
+     * @return Ebook
+     */
+    public function setBroken($broken)
+    {
+        $this->broken = $broken;
+
+        return $this;
+    }
+
+    /**
+     * Get broken
+     *
+     * @return boolean 
+     */
+    public function getBroken()
+    {
+        return $this->broken;
     }
 }

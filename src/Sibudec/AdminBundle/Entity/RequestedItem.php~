@@ -45,14 +45,14 @@ class RequestedItem
     /**
      * @var string
      *
-     * @ORM\Column(name="volume", type="string", length=255)
+     * @ORM\Column(name="volume", type="string", length=255, nullable=true)
      */
     private $volume;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="number", type="string", length=255)
+     * @ORM\Column(name="number", type="string", length=255, nullable=true)
      */
     private $number;
 
@@ -73,7 +73,7 @@ class RequestedItem
     /**
      * @var integer
      *
-     * @ORM\Column(name="finalPage", type="integer")
+     * @ORM\Column(name="finalPage", type="integer", nullable=true)
      */
     private $finalPage;
 
@@ -94,28 +94,42 @@ class RequestedItem
     /**
      * @var string
      *
-     * @ORM\Column(name="requesterPhone", type="string", length=255)
+     * @ORM\Column(name="requesterSchool", type="string", length=255)
+     */
+    private $requesterSchool;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="requesterHQ", type="string", length=255)
+     */
+    private $requesterHQ;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="requesterPhone", type="string", length=255, nullable=true)
      */
     private $requesterPhone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="comment", type="string", length=255)
+     * @ORM\Column(name="comment", type="string", length=255, nullable=true)
      */
     private $comment;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="datetime")
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $createdAt;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -450,5 +464,51 @@ class RequestedItem
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * Set requesterSchool
+     *
+     * @param string $requesterSchool
+     * @return RequestedItem
+     */
+    public function setRequesterSchool($requesterSchool)
+    {
+        $this->requesterSchool = $requesterSchool;
+
+        return $this;
+    }
+
+    /**
+     * Get requesterSchool
+     *
+     * @return string 
+     */
+    public function getRequesterSchool()
+    {
+        return $this->requesterSchool;
+    }
+
+    /**
+     * Set requesterHQ
+     *
+     * @param string $requesterHQ
+     * @return RequestedItem
+     */
+    public function setRequesterHQ($requesterHQ)
+    {
+        $this->requesterHQ = $requesterHQ;
+
+        return $this;
+    }
+
+    /**
+     * Get requesterHQ
+     *
+     * @return string 
+     */
+    public function getRequesterHQ()
+    {
+        return $this->requesterHQ;
     }
 }

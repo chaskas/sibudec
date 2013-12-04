@@ -1,0 +1,120 @@
+.container {
+  width: 920px;
+  padding-top: 30px;
+}
+
+.panel-sibudec {
+  border-color: #035ea4;
+}
+
+.panel-sibudec > .panel-heading {
+  color: #ffffff;
+  background-color: #035ea4;
+  border-color: #035ea4;
+}
+
+.panel-sibudec > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #035ea4;
+}
+
+.panel-sibudec > .panel-heading > .dropdown .caret {
+  border-color: #ffffff transparent;
+}
+
+.panel-sibudec > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #035ea4;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 10px 0;
+  margin-top: 1px \9;
+  /* IE8-9 */
+
+  line-height: normal;
+}
+
+.areas-tematicas-wrapper {
+  background: #f7f7f7;
+  padding: 20px;
+}
+
+.areas-tematicas-wrapper ul {
+  list-style: none !important;
+  margin: 0px !important;
+}
+.areas-tematicas-wrapper ul li a {
+  background: #ffffff url('images/lateral-li.png') 5px 50% no-repeat;
+  border-bottom: 1px solid #e0e0e0;
+  color: #626262;
+  display: block;
+  font-style: normal;
+  line-height: 18px;
+  padding: 3px 3px 3px 15px;
+  text-decoration: none;
+}
+.areas-tematicas-wrapper ul li :hover {
+  background: #ef4607;
+  color: #ffffff !important;
+  font-style: italic;
+}
+.areas-tematicas-wrapper ul li a {
+  display: block;
+}
+
+#main section article h3 {
+  clear: both;
+  color: #ffffff;
+  display: block;
+  font-family: 'Helvetica Neue Condensed', serif;
+  font-size: 1.0em;
+  padding: 20px;
+  background: #052c49;
+}
+
+#main section article form h3 {
+  padding: 0;
+  background: #035ea4;
+  margin: 0;
+}
+
+#main section article h5 {
+  clear: both;
+  color: #ef4507;
+  display: block;
+  font-family: 'Cinzel Bold', serif;
+  font-size: 1.1em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#main section article table {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#main section article table tbody td, #main section article table td {
+  border-bottom: 1px solid #e0e0e0;
+  color: #000000;
+  font-size: 0.9em;
+  /*padding: 5px;*/
+  vertical-align: top;
+}
+
+.apply-success {
+  background: #ef4507;
+  color: #ffffff;
+  padding: 70px;
+  margin: 50px;
+  text-align: center;
+  font: 'Swiss 721 Light', sans-serif;
+  font-size: 0.9em;
+
+}
+
+#main section article ol, #main section article ul {
+  display: block;
+  font-size: .8em;
+  margin: 0;
+  /*padding: 20px 0;*/
+}

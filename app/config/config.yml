@@ -25,6 +25,9 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
+    globals:
+        wordpress_site: "http://152.74.151.148/zibudec/"
+
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%

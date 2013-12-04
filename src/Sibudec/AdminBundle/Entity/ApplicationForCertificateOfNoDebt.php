@@ -45,26 +45,43 @@ class ApplicationForCertificateOfNoDebt
     /**
      * @var string
      *
-     * @ORM\Column(name="degree", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reasonStudent", type="string", length=255)
+     */
+    private $reasonStudent;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Degree", inversedBy="applies")
+     * @ORM\JoinColumn(name="degree_id", referencedColumnName="id")
      */
     private $degree;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="reason", type="string", length=255)
+     * @ORM\Column(name="studentType", type="integer", length=255)
      */
-    private $reason;
+    private $studentType;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="division", type="string", length=255)
+     * @ORM\Column(name="reasonOfficer", type="string", length=255)
      */
-    private $division;
+    private $reasonOfficer;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Department", inversedBy="applies")
+     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     */
+    protected $department;
 
-    
 
     /**
      * Get id
@@ -225,5 +242,120 @@ class ApplicationForCertificateOfNoDebt
     public function getDivision()
     {
         return $this->division;
+    }
+
+    /**
+     * Set reasonStudent
+     *
+     * @param string $reasonStudent
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setReasonStudent($reasonStudent)
+    {
+        $this->reasonStudent = $reasonStudent;
+
+        return $this;
+    }
+
+    /**
+     * Get reasonStudent
+     *
+     * @return string 
+     */
+    public function getReasonStudent()
+    {
+        return $this->reasonStudent;
+    }
+
+    /**
+     * Set reasonOfficer
+     *
+     * @param string $reasonOfficer
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setReasonOfficer($reasonOfficer)
+    {
+        $this->reasonOfficer = $reasonOfficer;
+
+        return $this;
+    }
+
+    /**
+     * Get reasonOfficer
+     *
+     * @return string 
+     */
+    public function getReasonOfficer()
+    {
+        return $this->reasonOfficer;
+    }
+
+    /**
+     * Set department
+     *
+     * @param \Sibudec\AdminBundle\Entity\Department $department
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setDepartment(\Sibudec\AdminBundle\Entity\Department $department = null)
+    {
+        $this->department = $department;
+
+        return $this;
+    }
+
+    /**
+     * Get department
+     *
+     * @return \Sibudec\AdminBundle\Entity\Department 
+     */
+    public function getDepartment()
+    {
+        return $this->department;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set studentType
+     *
+     * @param integer $studentType
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setStudentType($studentType)
+    {
+        $this->studentType = $studentType;
+
+        return $this;
+    }
+
+    /**
+     * Get studentType
+     *
+     * @return integer 
+     */
+    public function getStudentType()
+    {
+        return $this->studentType;
     }
 }

@@ -28,7 +28,7 @@ class EditorialController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('SibudecAdminBundle:Editorial')->findAll();
+        $entities = $em->getRepository('SibudecAdminBundle:Editorial')->findBy(array(), array('name' => 'ASC'));
 
         return array(
             'entities' => $entities,
