@@ -6,16 +6,17 @@
   <section id="page" class="ariel">
     <article class="ui-accordion ui-widget ui-helper-reset" role="tablist">
 
+      <h3 class="panel-title">Solicitud de Artículo</h3>
+
       <p>
         Los usuarios de la Universidad de Concepción pueden solicitar artículos de revistas que no se encuentren en nuestras bibliotecas, pero sí en otras instituciones a nivel nacional e internacional.
         <br>Para efectuar su solicitud complete el siguiente formulario:</p>
       <br>
+
+      <div class="form-wrapper">
       <form action="{{ path('application_for_item_create') }}" method="post" {{ form_enctype(form) }} role="form">
-        <div class="panel panel-sibudec">
-          <div class="panel-heading">
-            <h3 class="panel-title">Solicitud de Artículo</h3>
-          </div>
-          <div class="panel-body">
+
+
             {{ form_errors(form) }}
             <div class="row">
               <div class="form-group col-md-6">
@@ -26,8 +27,8 @@
 
               <div class="form-group col-md-6">
                 {{ form_label(form.title) }}
-            {{ form_errors(form.title) }}
-            {{ form_widget(form.title,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.title) }}
+                {{ form_widget(form.title,{ 'attr': {'class': 'form-control'} }) }}
               </div>
             </div>
 
@@ -88,8 +89,8 @@
             <div class="row">
               <div class="form-group col-md-6">
                 {{ form_label(form.requesterEmail) }}
-                {{ form_errors(form.requesterEmail) }}
                 {{ form_widget(form.requesterEmail,{ 'attr': {'class': 'form-control'} }) }}
+                {{ form_errors(form.requesterEmail) }}
               </div>
               <div class="form-group col-md-6">
                 {{ form_label(form.requesterPhone) }}
@@ -103,14 +104,17 @@
               {{ form_widget(form.comment,{ 'attr': {'class': 'form-control'} }) }}
             </div>
             {{ form_rest(form) }}
-          </div>
-          <div class="panel-footer">
-            <button class="btn btn-success pull-right" type="submit">Enviar</button>
-            <div class="clearfix"></div>
-          </div>
-        </div>
+
+            <button class="form-submit pull-right" type="submit">Enviar</button>
+
+            <br>
+            <p>* Campos Obligatorios</p>
+          
+
       </form>
 
+      </div>
+      <br>
       <center>
         Para mayor información contáctese con:
         <br>

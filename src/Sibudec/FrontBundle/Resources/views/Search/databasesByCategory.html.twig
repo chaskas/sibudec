@@ -20,11 +20,15 @@
         </aside>
         <section id="page" class="ariel">
             <article>
-            <h2>Bases de Datos</h2>
+                <h2>Bases de Datos</h2>
+                <h3>{{ category.name }}</h3>
+                <input type="text" id="search" class="form-control" placeholder="Ingrese su búsqueda">
                 <table>
+                    <tbody>
                     {% for entity in entities %}
                         <tr>
                             <td>
+                                <br>
                                 <a href="{{ entity.url }}" target="_blank">
                                     <h5>{{ entity.title }}</h5>
                                 </a>
@@ -37,6 +41,7 @@
                             </td>
                         </tr>
                     {% endfor %}
+                    </tbody>
                 </table>
             </article>
         </section>

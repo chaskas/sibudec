@@ -4,6 +4,8 @@ namespace Sibudec\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * ApplicationForCertificateOfNoDebt
  *
@@ -46,6 +48,11 @@ class ApplicationForCertificateOfNoDebt
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(
+     *     message = "El correo {{ value }} no es válido.",
+     *     checkMX = true,
+     *     checkHost = true
+     * )
      */
     private $email;
 
@@ -57,17 +64,11 @@ class ApplicationForCertificateOfNoDebt
     private $reasonStudent;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Degree", inversedBy="applies")
-     * @ORM\JoinColumn(name="degree_id", referencedColumnName="id")
-     */
-    private $degree;
-
-    /**
      * @var string
      *
-     * @ORM\Column(name="studentType", type="integer", length=255)
+     * @ORM\Column(name="degree", type="string", length=255, nullable=true)
      */
-    private $studentType;
+    private $degree;
 
     /**
      * @var string
@@ -77,8 +78,9 @@ class ApplicationForCertificateOfNoDebt
     private $reasonOfficer;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Department", inversedBy="applies")
-     * @ORM\JoinColumn(name="department_id", referencedColumnName="id")
+     * @var string
+     *
+     * @ORM\Column(name="department", type="string", length=255, nullable=true)
      */
     protected $department;
 
@@ -290,18 +292,7 @@ class ApplicationForCertificateOfNoDebt
         return $this->reasonOfficer;
     }
 
-    /**
-     * Set department
-     *
-     * @param \Sibudec\AdminBundle\Entity\Department $department
-     * @return ApplicationForCertificateOfNoDebt
-     */
-    public function setDepartment(\Sibudec\AdminBundle\Entity\Department $department = null)
-    {
-        $this->department = $department;
-
-        return $this;
-    }
+    
 
     /**
      * Get department
@@ -357,5 +348,18 @@ class ApplicationForCertificateOfNoDebt
     public function getStudentType()
     {
         return $this->studentType;
+    }
+
+    /**
+     * Set department
+     *
+     * @param string $department
+     * @return ApplicationForCertificateOfNoDebt
+     */
+    public function setDepartment($department)
+    {
+        $this->department = $department;
+
+        return $this;
     }
 }

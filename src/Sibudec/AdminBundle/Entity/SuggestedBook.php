@@ -4,6 +4,8 @@ namespace Sibudec\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * SuggestedBook
  *
@@ -43,9 +45,9 @@ class SuggestedBook
     private $year;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="additional_information", type="string", length=255)
+     * @ORM\Column(name="additional_information", type="text", length=255, nullable=true)
      */
     private $additionalInformation;
 
@@ -57,9 +59,9 @@ class SuggestedBook
     private $format;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="reason", type="string", length=255)
+     * @ORM\Column(name="reason", type="text", length=255)
      */
     private $reason;
 
@@ -73,7 +75,12 @@ class SuggestedBook
     /**
      * @var string
      *
-     * @ORM\Column(name="petitioner_email", type="string", length=255)
+     * @ORM\Column(name="petitionerEmail", type="string", length=255)
+     * @Assert\Email(
+     *     message = "El correo {{ value }} no es válido.",
+     *     checkMX = true,
+     *     checkHost = true
+     * )
      */
     private $petitionerEmail;
 

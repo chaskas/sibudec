@@ -17,7 +17,7 @@ class RequestedItemType extends AbstractType
             ->add('volume', null, array('label'=>'Vol.', 'required' => false))
             ->add('number', null, array('label'=>'Nº', 'required' => false))
             ->add('year', null, array('label'=>'Año', 'required' => true))
-            ->add('initialPage', null, array('label'=>'Página Inicio', 'required' => true))
+            ->add('initialPage', null, array('label'=>'Página Inicio', 'required' => false))
             ->add('finalPage', null, array('label'=>'Página Fin', 'required' => false))
             ->add('requesterName', null, array('label'=>'Nombre del Solicitante', 'required' => true))
             ->add('requesterSchool', null, array('label'=>'Facultad', 'required' => true))

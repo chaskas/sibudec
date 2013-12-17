@@ -13,17 +13,17 @@ class ApplicationForCertificateOfNoDebtType extends AbstractType
 
         $reasonStudentChoices = array('Renuncia a la carrera','Suspensión de estudios','Reincorporación','Postulación a pasantía','Cambio de carrera','Traslado de Universidad');
         $reasonOfficerChoices = array('Retiro de fondos','Contratación');
-        $studentType = array(1 => 'Pregrado', 2 => 'Postgrado');
+        // $studentType = array(1 => 'Pregrado', 2 => 'Postgrado');
 
         $builder
             ->add('firstName', null, array('label' => 'Nombres','required' => true))
             ->add('lastName', null, array('label' => 'Apellidos','required' => true))
             ->add('rut', null, array('label' => 'RUT','required' => true))
-            ->add('degree', null, array('label' => 'Carrera'))
+            ->add('degree', null, array('label' => 'Carrera', 'required'=>false))
             ->add('reasonStudent', 'choice', array('label' => 'Motivo', 'choices' => $reasonStudentChoices))
-            ->add('studentType', 'choice', array('label' => 'Tipo', 'choices' => $studentType, 'multiple'=>false, 'expanded'=>true))
+            // ->add('studentType', 'choice', array('label' => 'Tipo', 'choices' => $studentType, 'multiple'=>false, 'expanded'=>true))
             ->add('reasonOfficer', 'choice', array('label' => 'Motivo', 'choices' => $reasonOfficerChoices))
-            ->add('department', null, array('label' => 'Repartición'))
+            ->add('department', null, array('label' => 'Repartición', 'required'=>false))
             ->add('email', null, array('label' => 'Email','required' => true))
         ;
     }

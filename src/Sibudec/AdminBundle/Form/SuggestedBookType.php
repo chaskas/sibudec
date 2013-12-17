@@ -10,12 +10,14 @@ class SuggestedBookType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $format = array('Papel','Digital');
+
         $builder
             ->add('title', null, array('label'=>'Título'))
             ->add('author', null, array('label'=>'Autor'))
             ->add('year', null, array('label'=>'Año'))
-            ->add('additionalInformation', null, array('label'=>'Información adicional'))
-            ->add('format', null, array('label'=>'Formato'))
+            ->add('additionalInformation', null, array('label'=>'Información adicional','required' => false))
+            ->add('format', 'choice', array('choices' => $format,'label'=>'Formato'))
             ->add('reason', null, array('label'=>'Motivo'))
             ->add('petitionerFullName', null, array('label'=>'Nombre Completo'))
             ->add('petitionerEmail', null, array('label'=>'Email'))

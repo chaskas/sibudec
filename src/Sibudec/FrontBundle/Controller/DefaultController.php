@@ -48,7 +48,7 @@ class DefaultController extends Controller
      *
      * @Route("/certificate/create", name="application_for_certificate_create")
      * @Method("POST")
-     * @Template()
+     * @Template("SibudecFrontBundle:Default:applyForCertificate.html.twig")
      */
     public function applyForCertificateCreateAction(Request $request)
     {
@@ -100,7 +100,7 @@ class DefaultController extends Controller
      *
      * @Route("/item/create", name="application_for_item_create")
      * @Method("POST")
-     * @Template()
+     * @Template("SibudecFrontBundle:Default:applyForItem.html.twig")
      */
     public function applyForItemCreateAction(Request $request)
     {
@@ -152,7 +152,7 @@ class DefaultController extends Controller
      *
      * @Route("/suggestedbook/create", name="application_for_suggestedbook_create")
      * @Method("POST")
-     * @Template()
+     * @Template("SibudecFrontBundle:Default:suggestedbook.html.twig")
      */
     public function suggestedBookCreateAction(Request $request)
     {

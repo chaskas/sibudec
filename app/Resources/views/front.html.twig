@@ -152,20 +152,32 @@
             <div id="bajada">
                 <p>
                     <a href="{{ wordpress_site }}" title="SIBUDEC - Sistema de Bibliotecas">
-                        <img src="{{ asset('/img/logo-sibudec-footer.png') }}" alt="Logo SIBUDEC - Sistema de Bibliotecas"></a>
+                        <img src="{{ wordpress_site }}wp-content/themes/sibudecH5/images/logo-sibudec-footer.png" alt="Logo SIBUDEC - Sistema de Bibliotecas"></a>
                     <span>Dirección de Bibliotecas</span>
-                    <br>
+                    <br>    
                     <span>Universidad de Concepción - Chile</span>
-                    <br>
+                    <br>    
                     <span>Teléfono: 56 (41) 220 4403 - Fax: 56 (41) 2204591</span>
                 </p>
             </div>
+            <div id="sitios-interes">
+                <a href="{{ wordpress_site }}?page_id=110" title="Sitios de interés">sitios</a>
+            </div>
+
+            <!-- Redes Sociales-->    
+            <div id="redes-sociales">
+                <a id="twitter" href="http://www.twitter.com/sibudec" target="_blank" title="Twitter">Twitter</a>
+                <a id="facebook" href="http://www.facebook.com/biblioudec" target="_blank" title="Facebook">Facebook</a>
+            </div>
+            
             <div class="clear"></div>
         </div>
+        <!-- class="nuevesesenta" -->    
     </footer>
     {% block javascripts %}
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.quicksearch.js') }}"></script>
 
     <script type="text/javascript">
         window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
@@ -180,7 +192,15 @@
             placement: "auto top",
             trigger: "hover"
         });
+        
+        $("#search").quicksearch('table tbody tr',{
+            selector: "h5"
+        });
+
+        $('.zopim').hide();
+
     </script>
+
     {% endblock %}
 </body>
 </html>

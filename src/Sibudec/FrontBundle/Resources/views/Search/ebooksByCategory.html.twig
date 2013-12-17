@@ -22,7 +22,9 @@
             <article>
                 <h2>Libros Electrónicos</h2>
                 <h3>{{ category.name }}</h3>
+                <input type="text" id="search" class="form-control" placeholder="Ingrese su búsqueda">
                 <table>
+                    <tbody>
                     {% for entity in entities %}
                         <tr>
                             <td>
@@ -33,7 +35,7 @@
                                 <br>
                                 {{ entity.author }}
                                 <br>
-                                {{ entity.year }} 
+                                {{ entity.source }}, {{ entity.year }} 
                                 <br>
                                 <small>{{ entity.access }}</small>
                                 <br>
@@ -45,8 +47,10 @@
                             </td>
                         </tr>
                     {% endfor %}
+                    </tbody>
                 </table>
             </article>
         </section>
     </div>
+    
 {% endblock %}

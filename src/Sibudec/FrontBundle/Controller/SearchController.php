@@ -80,7 +80,7 @@ class SearchController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findBy(array('category' => $id, 'broken' => false));
+        $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findBy(array('category' => $id, 'broken' => false), array('title' => 'ASC'));
         $categories = $em->getRepository('SibudecAdminBundle:Category')->findAll();
 
         $category = $em->getRepository('SibudecAdminBundle:Category')->find($id);
@@ -107,10 +107,13 @@ class SearchController extends Controller
         $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findByCategory($id);
         $categories = $em->getRepository('SibudecAdminBundle:Category')->findAll();
 
+        $category = $em->getRepository('SibudecAdminBundle:Category')->find($id);
+
         return array(
             'entities' => $entities,
             'categories' => $categories,
-            'id' => $id
+            'id' => $id,
+            'category' => $category
         );
     }
 
@@ -127,10 +130,13 @@ class SearchController extends Controller
         $entities = $em->getRepository('SibudecAdminBundle:DB')->findAll();
         $categories = $em->getRepository('SibudecAdminBundle:Category')->findAll();
         
+        $category = $em->getRepository('SibudecAdminBundle:Category')->find($id);
+        
         return array(
             'entities' => $entities,
             'categories' => $categories,
-            'id' => $id
+            'id' => $id,
+            'category' => $category
         );
     }
 

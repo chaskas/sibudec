@@ -5,85 +5,95 @@
   {{ include ('SibudecFrontBundle:Search:menu.html.twig') }}
   <section id="page" class="ariel">
     <article class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+
+      <h3 class="panel-title">Sugerir Libro</h3>
+
+      <p>
+        Como usuario de nuestros servicios e integrante de la comunidad UdeC, nos interesa conocer  si tienes alguna sugerencia de un título nuevo para incorporar a nuestra colección.  
+
+        <br>
+        ¡Envíanos tu recomendación !
+      </p>
+
+
+      <div class="form-wrapper">
+
       <form action="{{ path('application_for_suggestedbook_create') }}" method="post" {{ form_enctype(form) }} role="form">
-        <div class="panel panel-sibudec">
-          <div class="panel-heading">
-            <h3 class="panel-title">Sugerir Libro</h3>
-          </div>
-          <div class="panel-body">
+
             {{ form_errors(form) }}
-            <div class="row">
-              <div class="form-group col-md-4">
-                {{ form_label(form.title) }}
-                {{ form_errors(form.title) }}
-                {{ form_widget(form.title) }}
-              </div>
-              <div class="form-group col-md-8">
+
+            <div class="form-group">
+              {{ form_label(form.title) }}
+              {{ form_errors(form.title) }}
+              {{ form_widget(form.title,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="form-group">
                 {{ form_label(form.author) }}
-            {{ form_errors(form.author) }}
-            {{ form_widget(form.author) }}
+                {{ form_errors(form.author) }}
+                {{ form_widget(form.author,{ 'attr': {'class': 'form-control'} }) }}
               </div>
-            </div>
 
             <div class="row">
-              <div class="form-group col-xs-6">
-                {{ form_label(form.year) }}
-          {{ form_errors(form.year) }}
-          {{ form_widget(form.year) }}
-              </div>
-              <div class="form-group col-xs-6">
-                {{ form_label(form.additionalInformation) }}
-          {{ form_errors(form.additionalInformation) }}
-          {{ form_widget(form.additionalInformation) }}
-              </div>
-            </div>
-
-            <div class="form-group row">
-              <div class="col-xs-6">
+              <div class="form-group col-md-9">
                 {{ form_label(form.format) }}
-          {{ form_errors(form.format) }}
-          {{ form_widget(form.format) }}
+                {{ form_errors(form.format) }}
+                {{ form_widget(form.format,{ 'attr': {'class': 'form-control'} }) }}
               </div>
-              <div class="col-xs-6">
-                {{ form_label(form.reason) }}
-          {{ form_errors(form.reason) }}
-          {{ form_widget(form.reason) }}
+              <div class="form-group col-md-3">
+                {{ form_label(form.year) }}
+                {{ form_errors(form.year) }}
+                {{ form_widget(form.year,{ 'attr': {'class': 'form-control'} }) }}
               </div>
             </div>
 
-            <div class="form-group row">
-              <div class="col-xs-6">
-                {{ form_label(form.petitionerFullName) }}
-          {{ form_errors(form.petitionerFullName) }}
-          {{ form_widget(form.petitionerFullName) }}
-              </div>
-              <div class="col-xs-6">
-                {{ form_label(form.petitionerEmail) }}
-          {{ form_errors(form.petitionerEmail) }}
-          {{ form_widget(form.petitionerEmail) }}
-              </div>
+            <div class="form-group">
+              {{ form_label(form.reason) }}
+              {{ form_errors(form.reason) }}
+              {{ form_widget(form.reason,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="form-group">
+              {{ form_label(form.additionalInformation) }}
+              {{ form_errors(form.additionalInformation) }}
+              {{ form_widget(form.additionalInformation,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="form-group">
+              {{ form_label(form.petitionerFullName) }}
+              {{ form_errors(form.petitionerFullName) }}
+              {{ form_widget(form.petitionerFullName,{ 'attr': {'class': 'form-control'} }) }}
+            </div>
+
+            <div class="form-group">
+              {{ form_label(form.petitionerEmail) }}
+              {{ form_widget(form.petitionerEmail,{ 'attr': {'class': 'form-control'} }) }}
+              {{ form_errors(form.petitionerEmail) }}
             </div>
 
             <div class="form-group row">
               <div class="col-xs-6">
                 {{ form_label(form.petitionerStatus) }}
-          {{ form_errors(form.petitionerStatus) }}
-          {{ form_widget(form.petitionerStatus) }}
+                {{ form_errors(form.petitionerStatus) }}
+                {{ form_widget(form.petitionerStatus,{ 'attr': {'class': 'form-control'} }) }}
               </div>
               <div class="col-xs-6">
                 {{ form_label(form.petitionerArea) }}
-          {{ form_errors(form.petitionerArea) }}
-          {{ form_widget(form.petitionerArea) }}
+                {{ form_errors(form.petitionerArea) }}
+                {{ form_widget(form.petitionerArea,{ 'attr': {'class': 'form-control'} }) }}
               </div>
             </div>
             {{ form_rest(form) }}
-          </div>
-          <div class="panel-footer">
-            <button class="btn btn-success pull-right" type="submit">Enviar</button>
-            <div class="clearfix"></div>
-          </div>
-        </div>
+          
+
+          <button class="form-submit  pull-right" type="submit">Enviar</button>
+
+          <br>
+          <p>* Campos Obligatorios</p>
+
       </form>
+
+    </div>
 
     </article>
   </section>

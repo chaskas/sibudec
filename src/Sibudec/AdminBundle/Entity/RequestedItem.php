@@ -4,6 +4,9 @@ namespace Sibudec\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * RequestedItem
  *
@@ -66,7 +69,7 @@ class RequestedItem
     /**
      * @var integer
      *
-     * @ORM\Column(name="initialPage", type="integer")
+     * @ORM\Column(name="initialPage", type="integer", nullable=true)
      */
     private $initialPage;
 
@@ -88,6 +91,11 @@ class RequestedItem
      * @var string
      *
      * @ORM\Column(name="requesterEmail", type="string", length=255)
+     * @Assert\Email(
+     *     message = "El correo {{ value }} no es válido.",
+     *     checkMX = true,
+     *     checkHost = true
+     * )
      */
     private $requesterEmail;
 

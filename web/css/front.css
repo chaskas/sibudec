@@ -4,17 +4,17 @@
 }
 
 .panel-sibudec {
-  border-color: #035ea4;
+  border-color: #074777;
 }
 
 .panel-sibudec > .panel-heading {
   color: #ffffff;
-  background-color: #035ea4;
-  border-color: #035ea4;
+  background-color: #074777;
+  border-color: #074777;
 }
 
 .panel-sibudec > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #035ea4;
+  border-top-color: #074777;
 }
 
 .panel-sibudec > .panel-heading > .dropdown .caret {
@@ -22,7 +22,7 @@
 }
 
 .panel-sibudec > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #035ea4;
+  border-bottom-color: #074777;
 }
 
 input[type="radio"],
@@ -74,7 +74,7 @@ input[type="checkbox"] {
 
 #main section article form h3 {
   padding: 0;
-  background: #035ea4;
+  background: #074777;
   margin: 0;
 }
 
@@ -117,4 +117,29 @@ input[type="checkbox"] {
   font-size: .8em;
   margin: 0;
   /*padding: 20px 0;*/
+}
+
+.form-wrapper {
+  margin: 0;
+  padding: 40px;
+  background: #e0e0e0;
+}
+
+label.required:after {
+    content: " *";
+}
+
+#main section article label {
+  color: #626262;
+  font-size: .8em;
+  line-height: 18px;
+  text-align: justify;
+}
+
+.form-submit {
+  padding: 5px 25px;
+  color: #FFF;
+  background: #ef4507;
+  cursor: pointer;
+  border: 0;
 }
