@@ -36,6 +36,24 @@ class EbookController extends Controller
     }
 
     /**
+     * Lists all broken Ebook entities.
+     *
+     * @Route("/broken", name="admin_ebook_brokens")
+     * @Method("GET")
+     * @Template()
+     */
+    public function brokenAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('SibudecAdminBundle:Ebook')->findBy(array('broken' => true));
+
+        return array(
+            'entities' => $entities,
+        );
+    }
+
+    /**
      * Creates a new Ebook entity.
      *
      * @Route("/", name="admin_ebook_create")

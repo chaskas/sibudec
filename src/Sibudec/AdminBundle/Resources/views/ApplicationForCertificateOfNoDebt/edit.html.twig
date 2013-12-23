@@ -12,6 +12,7 @@
             </div>
             <div class="pure-u-1-2 content-controls">
                 <a class="pure-button secondary-button" href="{{ path('admin_afcond') }}">Volver</a>
+                <a class="pure-button pure-button-success" href="{{ path('admin_afcond') }}">Generar Certificado</a>
             </div>
         </div>
         <div class="content-body pure-u-1">
@@ -19,7 +20,75 @@
 
                 <input type="hidden" name="_method" value="PUT" />
 
-                {{ form_widget(edit_form) }}
+                {{ form_errors(edit_form) }}
+
+                <div class="pure-g">
+
+                <div class="pure-u-1-2">
+                    <div class="l-box">
+                    {{ form_label(edit_form.firstName) }}
+                    {{ form_errors(edit_form.firstName) }}
+                    {{ form_widget(edit_form.firstName, { 'attr': {'class': 'pure-input-1'} }) }}
+                    </div>
+                </div>
+                <div class="pure-u-1-2">
+                    <div class="l-box">
+                    {{ form_label(edit_form.lastName) }}
+                    {{ form_errors(edit_form.lastName) }}
+                    {{ form_widget(edit_form.lastName, { 'attr': {'class': 'pure-input-1'} }) }}
+                    </div>
+                </div>
+                <div class="pure-u-1-2">
+                    <div class="l-box">
+                    {{ form_label(edit_form.rut) }}
+                    {{ form_errors(edit_form.rut) }}
+                    {{ form_widget(edit_form.rut, { 'attr': {'class': 'pure-input-1'} }) }}
+                    </div>
+                </div>
+                <div class="pure-u-1-2">
+                    <div class="l-box">
+                    {{ form_label(edit_form.email) }}
+                    {{ form_errors(edit_form.email) }}
+                    {{ form_widget(edit_form.email, { 'attr': {'class': 'pure-input-1'} }) }}
+                    </div>
+                </div>
+                {% if edit_form.vars.value.degree is not empty %}
+                    <div class="pure-u-1-2">
+                        <div class="l-box">
+                        {{ form_label(edit_form.degree) }}
+                        {{ form_errors(edit_form.degree) }}
+                        {{ form_widget(edit_form.degree, { 'attr': {'class': 'pure-input-1'} }) }}
+                        </div>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div class="l-box">
+                        {{ form_label(edit_form.reasonStudent) }}
+                        {{ form_errors(edit_form.reasonStudent) }}
+                        {{ form_widget(edit_form.reasonStudent, { 'attr': {'class': 'pure-input-1'} }) }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if edit_form.vars.value.department is not empty %}
+                    <div class="pure-u-1-2">
+                        <div class="l-box">
+                        {{ form_label(edit_form.department) }}
+                        {{ form_errors(edit_form.department) }}
+                        {{ form_widget(edit_form.department, { 'attr': {'class': 'pure-input-1'} }) }}
+                        </div>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div class="l-box">
+                        {{ form_label(edit_form.reasonOfficer) }}
+                        {{ form_errors(edit_form.reasonOfficer) }}
+                        {{ form_widget(edit_form.reasonOfficer, { 'attr': {'class': 'pure-input-1'} }) }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                </div>
+
+                {{ form_widget(edit_form._token) }}
 
                 <p>
                     <button type="submit" class="pure-button success">Guardar</button>

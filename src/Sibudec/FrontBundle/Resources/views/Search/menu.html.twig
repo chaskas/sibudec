@@ -8,17 +8,20 @@
                     <span>de conocimiento</span>
                 </h3>
                 <ul>
-                    <li class="page_item page-item-81">
-                        <a href="{{ wordpress_site }}?page_id=81">Bases de datos</a>
+                    <li class="page_item page-item-81 {% if('databases' in app.request.uri) %} current_page_item {% endif %}">
+                        <a href="{{ path('search_categories_databases') }}">Bases de datos</a>
                     </li>
                     <li class="page_item page-item-83">
                         <a href="{{ wordpress_site }}?page_id=83">Repositorio</a>
                     </li>
-                    <li class="page_item page-item-85">
-                        <a href="{{ wordpress_site }}?page_id=85">Libros electrónicos</a>
+                    <li class="page_item page-item-85 {% if('ebooks' in app.request.uri) %} current_page_item {% endif %}">
+                        <a href="{{ path('search_categories_ebooks') }}">Libros electrónicos</a>
                     </li>
-                    <li class="page_item page-item-87">
-                        <a href="{{ wordpress_site }}?page_id=87">Revistas electrónicas</a>
+                    <li class="page_item page-item-87 {% if('journals' in app.request.uri) %} current_page_item {% endif %}">
+                        <a href="{{ path('search_categories_journals') }}">Revistas electrónicas</a>
+                    </li>
+                    <li class="page_item page-item-87 {% if('acquisitions' in app.request.uri) %} current_page_item {% endif %}">
+                        <a href="{{ path('acquisitions') }}">Nuevas Adquisiciones</a>
                     </li>
                 </ul>
             </li>

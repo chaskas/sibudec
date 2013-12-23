@@ -1,0 +1,38 @@
+{% extends '::front.html.twig' %}
+
+{% block body -%}
+<div id="main">
+    
+    {{ include ('SibudecFrontBundle:Search:menu.html.twig') }}
+
+    <section id="page" class="ariel">
+        <article class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+            <small>&nbsp;</small>
+            <h3>Nuevas Adquisiciones</h3>
+            
+            <div style="height: 600px; overflow-y: scroll;">
+                <table>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>
+                                <br>
+
+                                    <h5>{{ entity.title }}</h5>
+
+                                <br>
+                                {{ entity.author }}
+                                <br>
+                                <small>{{ entity.year }}, {{ entity.bibliography }}</small>
+                                <br>
+                                <small>{{ entity.school }}</small>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+        </article>
+    </section>
+</div>
+{% endblock %}

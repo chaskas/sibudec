@@ -10,6 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sibudec\AdminBundle\Entity\ApplicationForCertificateOfNoDebt;
 use Sibudec\AdminBundle\Form\ApplicationForCertificateOfNoDebtType;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * ApplicationForCertificateOfNoDebt controller.
  *
@@ -182,5 +185,25 @@ class ApplicationForCertificateOfNoDebtController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+
+    /**
+     * @Route("/certificate/send", name="admin_send_certificate")
+     * @Method("GET")
+     * @Template("SibudecAdminBundle:ApplicationForCertificateOfNoDebt:sendCertificate.pdf.twig")
+     */
+    public function sendCertificateAction()
+    {
+                //creating html source
+                $html = $this->renderView('SibudecAdminBundle:ApplicationForCertificateOfNoDebt:sendCertificate.pdf.twig', array());
+
+                //loading io_tcpdf library
+                $pdf = $this->get('io_tcpdf');
+                //do your stuff here
+
+                //display pdf (it returns a Response Object)
+                return $pdf->quick_pdf($html);
+                // return array();
+
     }
 }

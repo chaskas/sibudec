@@ -9,10 +9,7 @@
                     Listado de solicitudes al <span>{{ "now"|date("d/M/Y") }}</span>
                 </p>
             </div>
-            <div class="pure-u-1-2 content-controls">
-                <a class="pure-button secondary-button" href="{{ path('admin_afcond_new') }}">Nuevo</a>
-                <!-- <a class="pure-button secondary-button">Exportar a Excel</a> -->
-            </div>
+
         </div>
         <div class="content-body pure-u-1">
             <table class="pure-table">
@@ -20,7 +17,7 @@
                     <tr>
                         <th>RUT</th>
                         <th>Nombre Completo</th>
-                        <th>Carrera</th>
+                        <th>Email</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -34,14 +31,11 @@
                             {{ entity.fullName }}
                         </td>
                         <td>
-                            {{ entity.degree }}
+                            {{ entity.email }}
                         </td>
                         <td>
                             <a href="{{ path('admin_afcond_edit', { 'id': entity.id }) }}">
                                 <img src="{{ asset('img/icons/edit.png') }}" alt="Editar" />
-                            </a>
-                            <a href="{{ path('admin_afcond_delete', { 'id': entity.id }) }}" onclick="return confirm('¿Está seguro?');">
-                                <img src="{{ asset('img/icons/trash.png') }}" alt="Eliminar" />
                             </a>
                         </td>
                     </tr>

@@ -141,6 +141,23 @@ class SearchController extends Controller
     }
 
     /**
+     * Lists all Acquisition entities.
+     *
+     * @Route("/acquisitions", name="acquisitions")
+     * @Template()
+     */
+    public function acquisitionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('SibudecAdminBundle:Acquisition')->findAll();
+
+        return array(
+            'entities' => $entities,
+        );
+    }
+
+    /**
      * Reporta un enlace Roto para Ebooks
      *
      * @Route("/ebooks/{id}/broken/cat/{cat}/", name="broken_ebook")

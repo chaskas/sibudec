@@ -23,6 +23,7 @@
                 <h2>Bases de Datos</h2>
                 <h3>{{ category.name }}</h3>
                 <input type="text" id="search" class="form-control" placeholder="Ingrese su búsqueda">
+                <div style="height: 600px; overflow-y: scroll;">
                 <table>
                     <tbody>
                     {% for entity in entities %}
@@ -43,6 +44,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                </div>
             </article>
         </section>
     </div>

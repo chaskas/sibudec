@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Sibudec\AdminBundle\SibudecAdminBundle(),
             //new FOS\UserBundle\FOSUserBundle(),
             new Sibudec\FrontBundle\SibudecFrontBundle(),
+            new Io\TcpdfBundle\IoTcpdfBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

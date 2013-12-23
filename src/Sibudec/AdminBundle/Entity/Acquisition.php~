@@ -51,7 +51,7 @@ class Acquisition
 
     /**
      * @ORM\ManyToOne(targetEntity="School", inversedBy="adquisitions")
-     * @ORM\JoinColumn(name="school_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="school_id", referencedColumnName="id", onDelete="SET NULL", nullable=true)
      */
     protected $school;
 
